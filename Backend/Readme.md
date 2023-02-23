@@ -55,9 +55,54 @@ filtering with pagination
     "rating": 4.1,
     "id": 1
 }
+```
 
 
 
 #### for verifying purpose you can check following url
-##### it is the demo link to check
+
+#### it is the demo link to check
 `https://pepperfry-website-api.onrender.com/sofas`
+
+
+
+
+
+
+
+## for authentication purpose 
+
+1. REGISTRATION URL 
+the fields are 
+
+first_name (required)
+last_name (required)
+email (required)
+password (required)
+role (required)
+age (not required)
+
+url = `http://localhost:8080/users/register`
+
+if (registration success) {
+    return message;
+} else {
+    return registration failed;
+}
+
+
+
+2. LOGIN URL
+the fields are
+
+email (required)
+password (required)
+
+url = `http://localhost:8080/users/login`
+
+
+if (login success) {
+    return ( message, token, name, role );
+} else {
+    return login failed;
+}
