@@ -1,10 +1,11 @@
-import { Box, Flex, Grid, Image, Text } from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
+import { Box, Button, Flex, Grid, Image, Text, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ProductCards = ({PRODUCT}) => {
   return (
-    <Grid p="2" templateColumns={{base: "repeat(1, 1fr)", sm:"repeat(2, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)"}} gap="20px">
+    <Grid borderBottomWidth="2px" borderBottomColor={useColorModeValue("gray.300", "gray.700")} zIndex={2} bgColor={'gray.100'} p="4" templateColumns={{base: "repeat(1, 1fr)", sm:"repeat(2, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)"}} gap="20px">
         <Box bgImage="https://img.freepik.com/premium-photo/green-watercolor-with-white-spots-painted-textured-paper-with-watercolor-paints-different-green-color-background-backdrop-abstract-art-handmade-diy-painting_152932-2783.jpg?w=826" bgSize="100% 100%" p="15px" boxShadow= "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px">
             <Flex>
                 <Box>
@@ -36,6 +37,12 @@ const ProductCards = ({PRODUCT}) => {
                     <Image m="auto" src="https://icon-library.com/images/my-orders-icon/my-orders-icon-22.jpg" w="80%" /> 
                 </Box>
             </Flex>
+        </Box>
+        <Box>
+
+        </Box>
+        <Box>
+            <Button colorScheme={"orange"} rightIcon={<AddIcon/>}>ADD NEW {PRODUCT}</Button>
         </Box>
     </Grid>
   )
