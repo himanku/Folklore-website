@@ -1,6 +1,7 @@
 import { Box, Drawer, DrawerContent, useColorModeValue, useDisclosure} from '@chakra-ui/react'
 import React from 'react'
 import { MobileNav } from '../../component/Admin/MobileNav';
+import ProductCards from '../../component/Admin/ProductCards';
 import ProductsNavbar from '../../component/Admin/ProductsNavbar';
 import SearchSortFilter from '../../component/Admin/SearchSortFilter';
 import SidebarContent from '../../component/Admin/SidebarContent';
@@ -29,6 +30,7 @@ const Dresses = () => {
       <Box ml={{ base: 0, md: 60 }}>
         <SearchSortFilter/>
         <ProductsNavbar/>
+        <ProductCards PRODUCT="DRESSES"/>
         {/* <RevenueCard/> */}
         {/* <Flex mt="30px" w="100%" justifyContent="space-around" gap="20px" flexDir={{base:"column", md:"row"}} alignItems="center">
           <Image src={bar} w={{base:"90%",md:"50%"}}/>

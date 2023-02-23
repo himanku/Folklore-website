@@ -2,6 +2,7 @@ import { Box, Drawer, DrawerContent, useColorModeValue, useDisclosure} from '@ch
 import React from 'react'
 import { MobileNav } from '../../component/Admin/MobileNav';
 import SidebarContent from '../../component/Admin/SidebarContent';
+import UserTable from '../../component/Admin/UserTable';
 
 
 const Users = () => {
@@ -25,7 +26,7 @@ const Users = () => {
       </Drawer>
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        {/* <RevenueCard/> */}
+        <UserTable/>
         {/* <Flex mt="30px" w="100%" justifyContent="space-around" gap="20px" flexDir={{base:"column", md:"row"}} alignItems="center">
           <Image src={bar} w={{base:"90%",md:"50%"}}/>
           <Image src={exp} w={{base:"90%",md:"50%"}}/>
