@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { SofaModel } = require("../models/sofa.models");
+const { SofaModel } = require("../models/sofa.model");
 
 const sofaRouter = express.Router();
 
