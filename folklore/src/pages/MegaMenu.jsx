@@ -85,7 +85,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.ctfassets.net/5de70he6op10/2wXXPyVj3YKuHduirUr2i6/b1ba7b3915e68fae5c3887b8b45c838f/023123_Feb_Site_Content_ApparelSet501__2x__1_.jpg?w=1440&q=80&fm=webp" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -99,19 +99,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -126,7 +129,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/4112522160133_023_b?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=100" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -141,19 +144,22 @@ const MegaMenu = () => {
             </MenuButton>
             
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -168,7 +174,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -182,19 +188,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -209,7 +218,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -223,19 +232,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -250,7 +262,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -264,19 +276,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -291,7 +306,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -305,19 +320,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -332,7 +350,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -346,19 +364,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -373,7 +394,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -387,19 +408,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -414,7 +438,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -428,19 +452,22 @@ const MegaMenu = () => {
                 </Box>
             </MenuButton>
             <MenuList>
-                <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
+            <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
                     <Box alignItems={"center"}>
+
+
+
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Clothing   </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop All Dresses</MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >New! </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Top Rated Dressesg   </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Dresses    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Home & Furniture       </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jewelry  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petites    </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus  </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
-                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Lounge & Casual Dresses       </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Occasion & Party Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Petite Dresses    </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Plus Dresses  </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
+                        <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
                     <Box alignItems={"center"}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
@@ -455,8 +482,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.ctfassets.net/5de70he6op10/6Uu0HuI0eY4wRw4dKKePZX/f231299f9cf1d60e4624b898844435b8/022123_NewArrivalsContent_MaeveDresses_Supernav_NEW.jpg?w=295&q=80&fm=webp" h={"300px"} w={"300px"} />
-                
+                 
                     </Box>
                     
                 </Grid>
