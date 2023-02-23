@@ -35,6 +35,9 @@ import {
   FormLabel,
   FormHelperText,
   FormErrorMessage,
+  VStack,
+  Heading,
+  Stack,
 } from '@chakra-ui/react';
 import {HiLanguage,HiUser} from "react-icons/hi2";
 import { BsBag ,BsSearch} from "react-icons/bs";
@@ -47,6 +50,7 @@ const Navbar = () => {
     const [size, setSize] = useState('')
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [flage,setFlag]=useState(false)
+    const [Registarion, setRegistarion] = useState(false);
   
     const handleClick = (newSize) => {
       setSize(newSize)
@@ -78,14 +82,14 @@ const Navbar = () => {
                                                                 <PopoverTrigger >
                                                                   <Button _hover={{backgroundColor:"#fdfdf9"}} backgroundColor={"#fdfdf9"}><HiUser/>Sign in / sign up</Button>
                                                                 </PopoverTrigger>
-                                                                <PopoverContent zIndex={4} boxShadow="0 0 10px rgba(0, 0, 0, 0.2)" 
+                                                                {!Registarion?(<PopoverContent zIndex={4} boxShadow="0 0 10px rgba(0, 0, 0, 0.2)" 
                                                                 borderRadius="4px" h={"650px"} w={"500px"} mr={"500px"} p={6}>
                                                                   <PopoverArrow />
                                                                   <PopoverCloseButton />
                                                                   <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
                                                                     <Text  fontSize={"40px"}>Sign In</Text> </Flex></PopoverHeader>
                                                                   <PopoverBody textAlign={"center"}> <Text>Sign in so you can save items to your wishlists, track your orders, and check out faster!</Text>
-                                                                  <FormControl isInvalid={EnailError}>
+                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
                                                                             
                                                                             <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
                                                                             {!EnailError ? (
@@ -104,7 +108,7 @@ const Navbar = () => {
                                                                             ) : (
                                                                               <FormErrorMessage>password is required.</FormErrorMessage>
                                                                             )}
-                                                                            <Input type={"submit"} value={"Sign In"}/>
+                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign In"}/>
                                                                           </FormControl>
 
 
@@ -113,12 +117,67 @@ const Navbar = () => {
 
                                                                     
                                                                   </PopoverBody>
+                                                                  <VStack gap={3}>
+                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
+                                                                    
+                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
+                                                                    <PopoverBody gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
+                                                                             <Text>Welcome! It's quick and easy to set up an account</Text>
+                                                                            <Button  onClick={()=>{setRegistarion(!Registarion)}} bgColor={"#4b5666"} color={"white"}  >Create An Account</Button>
+ 
+                                                                  </PopoverBody></VStack>
+                                                                </PopoverContent>):(<PopoverContent textAlign={"center"} zIndex={4} boxShadow="0 0 10px rgba(0, 0, 0, 0.2)" 
+                                                                borderRadius="4px" h={"650px"} w={"500px"} mr={"500px"} p={6}>
+                                                                  <PopoverArrow />
+                                                                  <PopoverCloseButton />
                                                                   <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
                                                                     <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
-                                                                    <PopoverBody textAlign={"center"}> <Text>Welcome! It's quick and easy to set up an account</Text>
-                                                                 
-                                                                            <Input type={"submit"} value={"Create An Account"}/>
-                                                                       
+                                                                  <PopoverBody textAlign={"center"}> 
+                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                            
+                                                                            <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the email you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Email is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='text' placeholder='Firstname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the Firstname you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Firstname is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='text' placeholder='lastname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the lastname you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>lastname is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='text' placeholder='Age' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the Age you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Age is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='password' placeholder='password...' value={Loginpassword}
+                                                                              onChange={(e) => setLoginpassword(e.target.value)} />
+                                                                            {!passwordError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the password you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>password is required.</FormErrorMessage>
+                                                                            )}
+                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign up"}/>
+                                                                          </FormControl>
 
 
                                                                                                                                             
@@ -126,7 +185,23 @@ const Navbar = () => {
 
                                                                     
                                                                   </PopoverBody>
-                                                                </PopoverContent>
+                                                                  {/* <VStack gap={3}>
+                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
+                                                                    
+                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
+                                                                    <PopoverBody gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
+                                                                            
+                                                                            <Input  bgColor={"#4b5666"} color={"white"} type={"submit"} value={"Create An Account"}/>
+                                                                       
+
+
+                                                                                                                                            
+
+
+                                                                    
+                                                                  </PopoverBody></VStack> */}
+                                                                   <Text _hover={{cursor: "pointer"}} onClick={()=>{setRegistarion(!Registarion)}}>Already have an  an account</Text>
+                                                                </PopoverContent>)}
                                                               </Popover> 
                                   </Flex>
                                 </Flex>
@@ -148,25 +223,11 @@ const Navbar = () => {
                                                     <DrawerOverlay />
                                                     <DrawerContent>
                                                     <DrawerCloseButton />
-                                                    <DrawerHeader>{`${size} drawer contents`}</DrawerHeader>
-                                                    <DrawerBody>
-                                                        <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                        Consequat nisl vel pretium lectus quam id. Semper quis lectus
-                                                        nulla at volutpat diam ut venenatis. Dolor morbi non arcu risus
-                                                        quis varius quam quisque. Massa ultricies mi quis hendrerit dolor
-                                                        magna eget est lorem. Erat imperdiet sed euismod nisi porta.
-                                                        Lectus vestibulum mattis ullamcorper velit.
-                                                        </p>
-                                                    </DrawerBody>
-                                                    <Box tabIndex={-1} aria-label='Focus moved to this box'>
-                                                            Some other content that'll receive focus on close.
-                                                        </Box>
+                                                    <DrawerHeader>
 
-                                                        <Button  onClick={()=>{setFlag(!flage)}}>
-                                                            Open Modal
-                                                        </Button>
+                                                      <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  onClick={()=>{setFlag(!flage)}}>
+                                                           Sign In /Sign up
+                                                        </Box>
                                                       { flage &&<Modal  isOpen={onClose} onClose={isOpen} size={"full"}>
                                                             <ModalOverlay />
                                                             <ModalContent>
@@ -174,18 +235,174 @@ const Navbar = () => {
                                                             <ModalCloseButton  onClick={()=>{setFlag(!flage)
                                                                     onClose()}} />
                                                             <ModalBody>
+                                                            {!Registarion?(<>
+                                                                 
+                                                                  <Heading ><Flex w={"100%"} justifyContent={"center"}>
+                                                                    <Text  fontSize={"40px"}>Sign In</Text> </Flex></Heading>
+                                                                  <Stack textAlign={"center"}> <Text>Sign in so you can save items to your wishlists, track your orders, and check out faster!</Text>
+                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                            
+                                                                            <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the email you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Email is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='password' placeholder='password...' value={Loginpassword}
+                                                                              onChange={(e) => setLoginpassword(e.target.value)} />
+                                                                            {!passwordError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the password you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>password is required.</FormErrorMessage>
+                                                                            )}
+                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign In"}/>
+                                                                          </FormControl>
+
+
+                                                                                                                                            
+
+
+                                                                    
+                                                                  </Stack>
+                                                                  <VStack gap={3}>
+                                                                  <Heading ><Flex w={"100%"} justifyContent={"center"}>
+                                                                    
+                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></Heading>
+                                                                    <Stack gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
+                                                                             <Text>Welcome! It's quick and easy to set up an account</Text>
+                                                                            <Button  onClick={()=>{setRegistarion(!Registarion)}} bgColor={"#4b5666"} color={"white"}  >Create An Account</Button>
+ 
+                                                                  </Stack></VStack>
+                                                                </>):(<>
+                                                                  
+                                                                  <Heading ><Flex w={"100%"} justifyContent={"center"}>
+                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></Heading>
+                                                                  <Stack textAlign={"center"}> 
+                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                            
+                                                                            <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the email you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Email is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='text' placeholder='Firstname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the Firstname you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Firstname is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='text' placeholder='lastname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the lastname you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>lastname is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='text' placeholder='Age' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                            {!EnailError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the Age you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>Age is required.</FormErrorMessage>
+                                                                            )}
+                                                                             <Input type='password' placeholder='password...' value={Loginpassword}
+                                                                              onChange={(e) => setLoginpassword(e.target.value)} />
+                                                                            {!passwordError ? (
+                                                                              <FormHelperText>
+                                                                                Enter the password you'd like to receive the newsletter on.
+                                                                              </FormHelperText>
+                                                                            ) : (
+                                                                              <FormErrorMessage>password is required.</FormErrorMessage>
+                                                                            )}
+                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign up"}/>
+                                                                          </FormControl>
+
+
+                                                                                                                                            
+
+
+                                                                    
+                                                                  </Stack>
+                                                                  {/* <VStack gap={3}>
+                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
+                                                                    
+                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
+                                                                    <PopoverBody gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
+                                                                            
+                                                                            <Input  bgColor={"#4b5666"} color={"white"} type={"submit"} value={"Create An Account"}/>
+                                                                       
+
+
+                                                                                                                                            
+
+
+                                                                    
+                                                                  </PopoverBody></VStack> */}
+                                                                   <Text _hover={{cursor: "pointer"}} onClick={()=>{setRegistarion(!Registarion)}}>Already have an  an account</Text>
+                                                                </>)}
                                                               
                                                             </ModalBody>
 
                                                             <ModalFooter>
-                                                                <Button  mr={3} onClick={()=>{setFlag(!flage)
+                                                                {/* <Button  mr={3} onClick={()=>{setFlag(!flage)
                                                                     onClose()}}>
                                                                 Close
-                                                                </Button>
-                                                                <Button variant='ghost'>Secondary Action</Button>
+                                                                </Button> */}
+                                                                
                                                             </ModalFooter>
                                                             </ModalContent>
                                                         </Modal>}
+                                                    </DrawerHeader>
+                                                    <DrawerBody>
+                                                        <VStack>
+
+                                                          <Box borderBottom={"1px solid black"} w={"100%"} h={16} >
+                                                                          
+                                                              <Text fontSize={"2xl"} >New!</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"} >Dresses</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"}  >Clothing</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"}  >Shoes</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"}  >Accessories</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"} >Weddings</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16} >
+                                                          <Text fontSize={"2xl"}  >Home & Furniture</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"}  >Beauty & Wellness</Text>
+                                                                      </Box>
+                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                          <Text fontSize={"2xl"} >Garden & Outdoor</Text>
+                                                                      </Box>
+                                                        <Box borderBottom={"1px solid black"} w={"100%"} h={16}  > 
+                                                         <Text fontSize={"2xl"}>Gifts</Text>
+                                                        </Box>
+                                                      
+                                                        </VStack>
+                                                    </DrawerBody>
+                                                  
+                                                        
                                                     </DrawerContent>
                                                 </Drawer>
                                           
