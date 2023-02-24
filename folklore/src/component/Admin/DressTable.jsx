@@ -2,16 +2,15 @@ import { Table, TableContainer, Tbody, Thead, Tr, Th, Stack, Skeleton, Image } f
 import React, { useEffect } from 'react'
 import ProductItem from './ProductItem'
 import {useSelector, useDispatch} from "react-redux"
-import { getFurniture } from '../../redux/Admin/AdminFurniture/action'
+import { getDress } from '../../redux/Admin/AdminDresses/action'
 
-const ProductTable = ({page, search, sort, filterbrand}) => {
-    const furnitures = useSelector((store) =>store.furniture.furnitures);
+const DressTable = ({page, search, sort, filterbrand}) => {
+    const dresses = useSelector((store) =>store.dress.dresses);
     const loading = useSelector((store) =>store.furniture.isLoading);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getFurniture(page, search,sort, filterbrand))       
-    },[ dispatch,page, search, sort, filterbrand])
-    console.log(furnitures)
+        dispatch(getDress(page, search, sort, filterbrand))       
+    },[dispatch, page, search, sort, filterbrand])
 
     if(loading) {
         return (
@@ -30,7 +29,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
             </>
         )
     }
-    if(furnitures.sofas?.length===0) {
+    if(dresses.dress?.length===0) {
         return (
             <Image m="auto" mt="50px" src="https://res.cloudinary.com/djo88dwrg/image/upload/v1677246154/Folklore%20assets/no-results_nmyrsm.png" alt="no-data"/>
         )
@@ -41,7 +40,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
             <Table variant='striped' colorScheme='purple'>
                 <Thead>
                 <Tr textAlign={"center"}>
-                    <Th w="50px" fontSize="16px">ID</Th>
+                    <Th fontSize="16px">ID</Th>
                     <Th fontSize="16px">IMAGE</Th>
                     <Th fontSize="16px">NAME</Th>
                     <Th fontSize="16px">BRAND</Th>
@@ -51,7 +50,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
                 </Tr>
                 </Thead>
                 <Tbody>
-                    {furnitures.sofas?.length>0 && furnitures.sofas.map((el) => (
+                    {dresses.dress?.length>0 && dresses.dress.map((el) => (
                         <ProductItem 
                         key={el._id}
                         src={el.img1}
@@ -59,7 +58,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
                         id={el._id.slice(0,9)}
                         brand={el.brand}
                         price={el.highprice}
-                        rating={el.rating? el.rating : "No reviews"}    
+                        rating={el.rating}    
                     />
                     ))}
                 </Tbody>
@@ -69,4 +68,4 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
   )
 }
 
-export default ProductTable
+export default DressTable

@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { DeleteIcon, EditIcon} from '@chakra-ui/icons'
 import { Button, Flex, Td, Text, Tr } from '@chakra-ui/react'
 
 const UserItem = ({id, name, email, status}) => {
+    const [state, setState] = useState(true);
+    const onClick = () => {
+        setState(!state);
+    }
   return (
     <Tr>
         <Td>{id}</Td>
@@ -18,12 +22,18 @@ const UserItem = ({id, name, email, status}) => {
                     <Text fontWeight={600}>DELETE</Text>
                 </Flex>
             </Button>
-            <Button variant={"ghost"}>
-                <Flex color="green" alignItems="center" gap="10px">
-                    <EditIcon/>
-                    <Text fontWeight={600}>EDIT</Text>
+            {state? <Button onClick={onClick} colorScheme={"green"} fontWeight={600}>
+                <Flex color="white" alignItems="center" gap="10px">
+                    <Text>ACTIVE USER</Text>
                 </Flex>
-            </Button>
+            </Button> 
+                :
+            <Button onClick={onClick} colorScheme={"red"} fontWeight={600}>
+                <Flex color="white" alignItems="center" gap="10px">
+                    <Text>RESTRICTED USER</Text>
+                </Flex>
+            </Button>}
+            
         </Td>
     </Tr>
   )
