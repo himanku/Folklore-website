@@ -5,7 +5,7 @@ import React from 'react'
 const MegaMenu = () => {
     return (
         <Box w={{base:"100%",lg:"95%"}} margin="auto" > 
-        <Grid templateColumns={{base:"repeat(2, 1fr)", sm:"repeat(3, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(19, 1fr)"}} gap="5px" >
+        <Grid templateColumns={{base:"repeat(2, 1fr)", sm:"repeat(3, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(19, 1fr)"}} gap={10} >
         <Menu>
             <MenuButton >
                 <Box display="flex" justifyContent="center" w="50px" >
@@ -129,7 +129,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.urbndata.com/is/image/Anthropologie/4112522160133_023_b?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=100" h={"300px"} w={"300px"} />
+                      <Img src=" https://images.urbndata.com/is/image/Anthropologie/4123212060036_089_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -218,7 +218,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
+                      <Img src="https://images.ctfassets.net/5de70he6op10/a0MtRZ7SQBt4BG3ou4Q0C/8dc925c3f44127a95a5a200ec1cbcafc/023123_Feb_Site_Content_ApparelSet503__2x.jpg?w=1440&q=80&fm=webp" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -262,7 +262,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
+                      <Img src="https://images.ctfassets.net/5de70he6op10/1ZY0kldTaAWxh3dSAcJbg5/d6dc4e9a92d41067f4f0bbd47d57382f/021323_Gateway_slice04.jpg?w=717&q=80&fm=webp" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -306,7 +306,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
+                      <Img src="https://images.ctfassets.net/5de70he6op10/3Ai7bUZtZi5xY42vRa7nCY/600452ed34e8abb5b1265b516e90ac88/474338746-aliving_hpg_ls_01_1_-2x.jpg?w=2640&q=80&fm=webp" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -350,7 +350,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/70741111_072_b?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=100" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
@@ -394,7 +394,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Jerrelle Guy for Anthropologie       </MenuItem>
                      </Box>
                     <Box alignItems={"center"}>
-                      <Img src="https://images.urbndata.com/is/image/Anthropologie/78605938_080_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
+                      <Img src="https://images.urbndata.com/is/image/Anthropologie/54974415_004_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349" h={"300px"} w={"300px"} />
                 
                     </Box>
                     
