@@ -1,9 +1,8 @@
 import axios from "axios"
-import {ADMIN_GET_BRANDS_SUCCESS,ADMIN_ADD_FURNITURE_FAILURE, ADMIN_ADD_FURNITURE_REQUEST, ADMIN_ADD_FURNITURE_SUCCESS, ADMIN_DELETE_FURNITURE_FAILURE, ADMIN_DELETE_FURNITURE_REQUEST, ADMIN_DELETE_FURNITURE_SUCCESS, ADMIN_GET_FURNITURE_FAILURE, ADMIN_GET_FURNITURE_REQUEST, ADMIN_GET_FURNITURE_SUCCESS, ADMIN_SINGLE_FURNITURE_FAILURE, ADMIN_SINGLE_FURNITURE_REQUEST, ADMIN_SINGLE_FURNITURE_SUCCESS, ADMIN_UPDATE_FURNITURE_FAILURE, ADMIN_UPDATE_FURNITURE_REQUEST, ADMIN_UPDATE_FURNITURE_SUCCESS} from "./actionTypes";
+import {ADMIN_ADD_FURNITURE_FAILURE, ADMIN_ADD_FURNITURE_REQUEST, ADMIN_ADD_FURNITURE_SUCCESS, ADMIN_DELETE_FURNITURE_FAILURE, ADMIN_DELETE_FURNITURE_REQUEST, ADMIN_DELETE_FURNITURE_SUCCESS, ADMIN_GET_FURNITURE_FAILURE, ADMIN_GET_FURNITURE_REQUEST, ADMIN_GET_FURNITURE_SUCCESS, ADMIN_SINGLE_FURNITURE_FAILURE, ADMIN_SINGLE_FURNITURE_REQUEST, ADMIN_SINGLE_FURNITURE_SUCCESS, ADMIN_UPDATE_FURNITURE_FAILURE, ADMIN_UPDATE_FURNITURE_REQUEST, ADMIN_UPDATE_FURNITURE_SUCCESS} from "./actionTypes";
 
 //get furnitures
 export const getFurniture = (page, search, sort, brand) => (dispatch) => {
-    console.log(page, search, sort.order, brand.toString())
     dispatch({type: ADMIN_GET_FURNITURE_REQUEST});
     return axios.get(`http://localhost:8080/sofas?page=${page}&search=${search}&brand=${brand.toString()}&sort=${sort.sort},${sort.order}`)
     .then((res) => {
@@ -20,9 +19,10 @@ export const getFurniture = (page, search, sort, brand) => (dispatch) => {
 //add task
 export const addFurniture = (payload) => (dispatch) => {
     dispatch({type: ADMIN_ADD_FURNITURE_REQUEST})
-    return axios.post(`http://localhost:8080/sofas/addsofas`, payload)
+    return axios.post(`http://localhost:8080/sofas/addsofa`, payload)
     .then((res) => {
         dispatch({type: ADMIN_ADD_FURNITURE_SUCCESS, payload: res.data});
+        console.log(res.data);
     })
     .catch((err) => {
         dispatch({type: ADMIN_ADD_FURNITURE_FAILURE})
