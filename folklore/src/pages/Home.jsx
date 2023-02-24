@@ -1,11 +1,16 @@
 import { Flex, Grid, VStack, Img, Stack, Button, Divider, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
+import Navbar from '../component/Navbar';
 import HighlitedCards from './HomeComponets/HighlitedCards';
+import HighlitExplore from './HomeComponets/HighlitExplore';
 import HighlitedProduct from './HomeComponets/Homehigiglites';
 import HighlitedProduct2 from './HomeComponets/Homehigiglites copy';
+ 
 
 const Home = () => {
     return (
+      <Stack m={0} p={0}  >
+      <Navbar/>
         <VStack p={8} gap={8}>
             <Grid templateColumns={{base:"repeat(1, 1fr)",md:"repeat(2, 1fr)",lg:"repeat(4, 1fr)",xl:"repeat(4, 1fr)"}}  gap={4} >
                 <Flex> <Img src='https://images.ctfassets.net/5de70he6op10/1yCt23d6XxdmkjGohde5ev/97f13874f53c019005210e6a690f3836/473929257-ls_m0_banner_a.jpg?w=630&q=80&fm=webp'/></Flex>
@@ -41,7 +46,7 @@ const Home = () => {
                 <Flex  position={"relative"}> <Img display={{base:"none",md:"none",lg:"flex",xl:"flex"}} src='https://images.ctfassets.net/5de70he6op10/BYqngT4RGr1qC07s5Stvm/45ac7c1b8ee7fc4ba75a71c5bae96223/473929345-ls_m5_bhldn.jpg?w=2694&q=80&fm=webp'/>
                 <Button position={"absolute"}  display={{base:"none",md:"none",lg:"flex",xl:"flex"}}  bottom={2}  left={{base:"40%",md:"40%",lg:"46",xl:"46%"}}>Shop now</Button>
                 </Flex>
-                <Flex> <Img display={{base:"flex",md:"flex",lg:"none",xl:"none"}} src='https://images.ctfassets.net/5de70he6op10/63SO63SJQhVYHwZXnDynLV/db42241ff01ae5edd29a63193b111859/SS_M5_BHLDN__2_.jpg?w=1125&q=80&fm=webp'/>
+                <Flex  position={"relative"}> <Img display={{base:"flex",md:"flex",lg:"none",xl:"none"}} src='https://images.ctfassets.net/5de70he6op10/63SO63SJQhVYHwZXnDynLV/db42241ff01ae5edd29a63193b111859/SS_M5_BHLDN__2_.jpg?w=1125&q=80&fm=webp'/>
                 <Button position={"absolute"}  display={{base:"flex",md:"flex",lg:"none",xl:"none"}}  bottom={16}  left={{base:"40%",md:"40%",lg:"46",xl:"46%"}}>Shop now</Button>
                 
                 
@@ -52,10 +57,39 @@ const Home = () => {
                 <Divider orientation='horizontal' size={"1px"} />
                 <HighlitedCards/>
               </Stack>
+
+              <Stack w={"100%"} h={"750px"} gap={2}>
+                  <Heading fontWeight={"normal"} alignItems={"left"}>Top-Rated Picks</Heading>
+                <Divider orientation='horizontal' size={"1px"} />
+                <HighlitedCards/>
+              </Stack>
+
+              <Stack w={"100%"} h={"750px"} gap={2}>
+                  <Heading fontWeight={"normal"} alignItems={"left"}>Top-Rated Picks</Heading>
+                <Divider orientation='horizontal' size={"1px"} />
+                <HighlitedCards/>
+              </Stack>
+
+              <Stack w={"100%"} h={"450px"} gap={2} textAlign={"center"}>
+                  <Heading fontWeight={"normal"}  >More to Explore</Heading>
+                <Divider orientation='horizontal' size={"1px"} />
+                <HighlitExplore/>
+              </Stack>
+              <Divider orientation='horizontal' size={"1px"} />
+
+              <Stack w={"100%"} h={"auto"} mb={10} gap={2} >
+                  <Heading fontWeight={"normal"}  >About Us</Heading>
+                 
+                 <Text>
+                 Our mission at Anthropologie has always been to surprise and delight you with unexpected, distinctive finds for your closet and home. We source and craft all of our products with care, ensuring that any treasure you find at Anthropologie is unique, just like you. Explore our dresses shop to find styles and fits perfect for any occasion,
+                  from cocktail party dresses to wedding guest dresses to casual daytime silhouettes. Shop BHLDN....
+                 </Text>
+              </Stack>
+            
                 
         
 
-        </VStack>
+        </VStack></Stack>
     );
 };
 

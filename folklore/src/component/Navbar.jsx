@@ -38,12 +38,18 @@ import {
   VStack,
   Heading,
   Stack,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from '@chakra-ui/react';
 import {HiLanguage,HiUser} from "react-icons/hi2";
 import { BsBag ,BsSearch} from "react-icons/bs";
 import logo from '../Assetes/folklore-logo.png'
 import MegaMenu from '../pages/MegaMenu';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoChevronDownCircleOutline } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -64,11 +70,12 @@ const Navbar = () => {
     const [Loginpassword, setLoginpassword] = useState('')
     const passwordError = Loginpassword === ''
     
+    const navigate=useNavigate()
  
   return (
-    <>
+   
                                                                        
-         <Box bg={useColorModeValue('#fdfdf9', '#fdfdf9')} px={2}>
+         <Box bg={useColorModeValue('#fdfdf9', '#fdfdf9')} px={2}  position="sticky" top={0} zIndex={4}>
 
                                 <Flex h={8} alignItems={'end'}  justifyContent={{base: 'center', sm: 'center', md: 'center',lg:'end'}} pr={12} > {/* top part */}
                                 <Flex justifyContent={'space-around'} gap={6} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}>
@@ -77,7 +84,21 @@ const Navbar = () => {
                                 <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                                             
                                                             
+                                <Menu>
+                                                          <MenuButton backgroundColor={"#fdfdf9"} as={Button} rightIcon={<IoChevronDownCircleOutline />}>
+                                                            Hi Jith
+                                                          </MenuButton>
+                                                          <MenuList>
+                                                         <MenuItem> Dashboard</MenuItem>
+                                                          <MenuItem>Personal Profile</MenuItem>
+                                                          <MenuItem>Addresses & Payments</MenuItem>
+                                                          <MenuItem>Order History</MenuItem>
+                                                          <MenuItem>Wish List</MenuItem>
+                                                          <MenuItem>Registry</MenuItem>
+                                                          <MenuItem>Sign Out</MenuItem>
                                                             
+                                                          </MenuList>
+                                                        </Menu> 
                                                              <Popover   >
                                                                 <PopoverTrigger >
                                                                   <Button _hover={{backgroundColor:"#fdfdf9"}} backgroundColor={"#fdfdf9"}><HiUser/>Sign in / sign up</Button>
@@ -205,7 +226,7 @@ const Navbar = () => {
                                                               </Popover> 
                                   </Flex>
                                 </Flex>
-                                                   <Box display={{base: 'flex', sm: 'flex', md: 'none',lg:'none'}}  h={"100%"}><Img src={logo} h={"100%"}/></Box>
+                                                   <Box onClick={()=>navigate("/")} display={{base: 'flex', sm: 'flex', md: 'none',lg:'none'}}  h={"100%"}><Img src={logo} h={"100%"}/></Box>
                                 </Flex>
 
                                                                         {/* middile part */}
@@ -224,10 +245,12 @@ const Navbar = () => {
                                                     <DrawerContent>
                                                     <DrawerCloseButton />
                                                     <DrawerHeader>
+                                                      
 
                                                       <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  onClick={()=>{setFlag(!flage)}}>
                                                            Sign In /Sign up
                                                         </Box>
+                                                       
                                                       { flage &&<Modal  isOpen={onClose} onClose={isOpen} size={"full"}>
                                                             <ModalOverlay />
                                                             <ModalContent>
@@ -422,7 +445,7 @@ const Navbar = () => {
                                             </Flex>
         
       </Box>
-    </>
+   
   );
 };
 
