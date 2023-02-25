@@ -23,9 +23,9 @@ app.get("/", (request, response) => {
     response.send("Welcome to NEM-111 project of Anthropologie website");
 });
 
+app.use("/users", authRouter);
 app.use("/sofas", sofaRouter);
 app.use("/dress", dressRouter);
-app.use("/users", authRouter);
 app.use(authenticate);
 app.use("/carts", cartRouter);
 app.use("/paymentdetails", paymentRouter);

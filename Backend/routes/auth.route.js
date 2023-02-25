@@ -23,10 +23,10 @@ authRouter.get("/", async (request, response) => {
 
 // -------------------- USER REGISTRATION POST REQUEST -------------------- //
 authRouter.post("/register", async (request, response) => {
-    const { first_name, last_name, email, password, age } = request.body;
+    const { first_name, last_name, email, password, age, role } = request.body;
 
     try {
-        if (first_name && last_name && email && password) {
+        if (first_name && last_name && email && password && role) {
         const old_user = await AuthModel.find({ email: email });
         if (old_user.length > 0) {
             response.send({ "Message": "You're email address already exists, please Logged In" });
@@ -35,7 +35,7 @@ authRouter.post("/register", async (request, response) => {
                 if (error) {
                     response.send({ "Message": "Cannot able to hash the password", "Error": error });
                 } else {
-                    const new_user = new AuthModel({ first_name, last_name, email, password: hash, age });
+                    const new_user = new AuthModel({ first_name, last_name, email, password: hash, age, role });
                     await new_user.save();
                     response.send({ "Message": "New User Successfully Registered! Please Logged In" });
                 }
