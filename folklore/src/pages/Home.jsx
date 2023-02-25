@@ -5,13 +5,17 @@ import HighlitedCards from './HomeComponets/HighlitedCards';
 import HighlitExplore from './HomeComponets/HighlitExplore';
 import HighlitedProduct from './HomeComponets/Homehigiglites';
 import HighlitedProduct2 from './HomeComponets/Homehigiglites copy';
+import Footer from '../component/Footer';
  
 
 const Home = () => {
     return (
       <Stack m={0} p={0}  >
+
+        {/* ---------------------------------------------------------------------------------------------------Navbar */}
       <Navbar/>
         <VStack p={8} gap={8}>
+                                            {/* -----------------------------------------------------------------------------------Home page Top sections */}
             <Grid templateColumns={{base:"repeat(1, 1fr)",md:"repeat(2, 1fr)",lg:"repeat(4, 1fr)",xl:"repeat(4, 1fr)"}}  gap={4} >
                 <Flex> <Img src='https://images.ctfassets.net/5de70he6op10/1yCt23d6XxdmkjGohde5ev/97f13874f53c019005210e6a690f3836/473929257-ls_m0_banner_a.jpg?w=630&q=80&fm=webp'/></Flex>
                 <Flex> <Img src='https://images.ctfassets.net/5de70he6op10/6sUQEatinxFVFTiPZ2WGFG/a0deaee57126fbd5c17e9be6f3f107a1/473929265-ls_m0_banner_b.jpg?w=630&q=80&fm=webp'/></Flex>
@@ -51,13 +55,13 @@ const Home = () => {
                 
                 
                 </Flex>
-                
+                                                    {/* -----------------------------------------------------------------------------------Home page Top-Rated Picks sections */}
                 <Stack w={"100%"} h={"750px"} gap={2}>
                   <Heading fontWeight={"normal"} alignItems={"left"}>Top-Rated Picks</Heading>
                 <Divider orientation='horizontal' size={"1px"} />
                 <HighlitedCards/>
               </Stack>
-
+                                                  {/* -------------------------------------------------------------------------------Two product cursores */}
               <Stack w={"100%"} h={"750px"} gap={2}>
                   <Heading fontWeight={"normal"} alignItems={"left"}>Top-Rated Picks</Heading>
                 <Divider orientation='horizontal' size={"1px"} />
@@ -76,7 +80,7 @@ const Home = () => {
                 <HighlitExplore/>
               </Stack>
               <Divider orientation='horizontal' size={"1px"} />
-
+                                                 {/* -----------------------------------------------------------------About us section */}
               <Stack w={"100%"} h={"auto"} mb={10} gap={2} >
                   <Heading fontWeight={"normal"}  >About Us</Heading>
                  
@@ -86,10 +90,12 @@ const Home = () => {
                  </Text>
               </Stack>
             
-                
+                {/* ---------------------------------------------------------------------------footer */}
         
 
-        </VStack></Stack>
+        </VStack>
+        <Footer/>
+        </Stack>
     );
 };
 

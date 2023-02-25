@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactNode } from 'react';
 import {
   Box,
   Flex,
- 
   Button,
-  
   useDisclosure,
   useColorModeValue,
-  
   Input,
   Img,
   Drawer,
@@ -42,6 +39,8 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Spinner,
+  Progress,
 } from '@chakra-ui/react';
 import {HiLanguage,HiUser} from "react-icons/hi2";
 import { BsBag ,BsSearch} from "react-icons/bs";
@@ -50,6 +49,10 @@ import MegaMenu from '../pages/MegaMenu';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getItem, setItem } from '../utility/localStorage';
+import { Login, Signin } from '../redux/Auth/auth.action';
+import { hasAlphaNum, hasSymbol } from '../utility/utilis';
 
 
 const Navbar = () => {
@@ -57,6 +60,8 @@ const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [flage,setFlag]=useState(false)
     const [Registarion, setRegistarion] = useState(false);
+
+
   
     const handleClick = (newSize) => {
       setSize(newSize)
@@ -69,24 +74,121 @@ const Navbar = () => {
     const EnailError = LoginEmail === ''
     const [Loginpassword, setLoginpassword] = useState('')
     const passwordError = Loginpassword === ''
+
+
+
+    const [SignininEmail, setsigninEmail] = useState(''||"jithstephen@gmail.com")
+
+    const SignininEmailError = SignininEmail === ''
+
+    const [SignininAge, setsigninAge] = useState(0)
+
+    const SignininAgeError = SignininAge === ''
+
+    const [Signininfirstname, setsigninfirstname] = useState('')
+
+    const SignininfirstnameError = Signininfirstname === ''
+    
+    const [Signininlastname, setsigninlastname] = useState('')
+
+    const SignininlastnameError = Signininlastname === ''
+
+
+    const [Signininpassword, setSigninpassword] = useState('')
+
+    const SignininpasswordError = Signininpassword === ''
+
+
+    const [alphaNum, setalphaNum] = useState(0);
+    const [symbolNum, setsymbolNum] = useState(0);
+    const [strengthCount, setstrengthCount] = useState(0);
+
+    const { isLoading, isError, userData, isAuth } =useSelector((store) => store.auth);
+  const dispatch = useDispatch();
+
+
+    const HandleSignin=()=>{
+         let data={
+          "email":LoginEmail,
+          "password":Loginpassword
+         }
+         console.log(data)
+         dispatch(Login(data))
+
+         setLoginEmail("")
+         setLoginpassword("")
+    }
+
+    const HandleLogin=()=>{
+      
+      let data={
+        "email":SignininEmail,
+        "password":Signininpassword,
+        "first_name":Signininfirstname,
+        "last_name":Signininlastname,
+         "role":"user",
+        
+       }
+       
+  dispatch(Signin(data))
+ setsigninEmail("")
+setsigninfirstname("")
+setsigninlastname("")
+setsigninAge("")
+setSigninpassword("")
+
+
+    }
+
+
+
+
+    const Logout=()=>{
+      setItem("userData",{})
+      window.location.reload()
+    }
+    
     
     const navigate=useNavigate()
+
+    const user=getItem("userData")
+   
+                                                        //  password strength validation
+    useEffect(() => {
+      let passTemp = 0;
+      if (Loginpassword.length > 7) {
+        passTemp = 1;
+      }
+      if (Signininpassword.length > 7) {
+        passTemp = 1;
+      }
+     
+      hasAlphaNum.test(Loginpassword) == true ? setalphaNum(1) : setalphaNum(0);
+      hasSymbol.test(Loginpassword) == true ? setsymbolNum(1) : setsymbolNum(0);
+      let tempCount = ((alphaNum * 30) + (symbolNum * 30) + (passTemp * 40));
+      setstrengthCount(tempCount);
+
+      hasAlphaNum.test(Signininpassword) == true ? setalphaNum(1) : setalphaNum(0);
+      hasSymbol.test(Signininpassword) == true ? setsymbolNum(1) : setsymbolNum(0);
+      let temp2Count = ((alphaNum * 30) + (symbolNum * 30) + (passTemp * 40));
+      setstrengthCount(temp2Count);
+    }, [Loginpassword.length,strengthCount,Signininpassword.length]);
  
   return (
    
                                                                        
          <Box bg={useColorModeValue('#fdfdf9', '#fdfdf9')} px={2}  position="sticky" top={0} zIndex={4}>
 
-                                <Flex h={8} alignItems={'end'}  justifyContent={{base: 'center', sm: 'center', md: 'center',lg:'end'}} pr={12} > {/* top part */}
+                                <Flex h={8} alignItems={'end'}  justifyContent={{base: 'center', sm: 'center', md: 'center',lg:'end'}} pr={12} > {/*------------------------------------- top part */}
                                 <Flex justifyContent={'space-around'} gap={6} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}>
                                 <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                 <HiLanguage/> English</Flex>
                                 <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                                             
-                                                            
-                                <Menu>
+   {/* ------------------------------------------------------------Logined user Dropdown */}
+                                                    { user &&(user.role=="admin"||user.role=="user" ) &&<Menu>
                                                           <MenuButton backgroundColor={"#fdfdf9"} as={Button} rightIcon={<IoChevronDownCircleOutline />}>
-                                                            Hi Jith
+                                                            Hi {`${user.name}`}
                                                           </MenuButton>
                                                           <MenuList>
                                                          <MenuItem> Dashboard</MenuItem>
@@ -94,12 +196,15 @@ const Navbar = () => {
                                                           <MenuItem>Addresses & Payments</MenuItem>
                                                           <MenuItem>Order History</MenuItem>
                                                           <MenuItem>Wish List</MenuItem>
-                                                          <MenuItem>Registry</MenuItem>
-                                                          <MenuItem>Sign Out</MenuItem>
+                                                         { user&&user.role=="admin" && <MenuItem>Admin Page</MenuItem>}
+                                                          <MenuItem onClick={Logout}>Sign Out</MenuItem>
                                                             
                                                           </MenuList>
-                                                        </Menu> 
-                                                             <Popover   >
+                                                        </Menu> }
+
+{/* 
+      --------------------------------------------------------------------------Authentication pop over */}
+                                                            {!user.role && <Popover   >
                                                                 <PopoverTrigger >
                                                                   <Button _hover={{backgroundColor:"#fdfdf9"}} backgroundColor={"#fdfdf9"}><HiUser/>Sign in / sign up</Button>
                                                                 </PopoverTrigger>
@@ -107,10 +212,11 @@ const Navbar = () => {
                                                                 borderRadius="4px" h={"650px"} w={"500px"} mr={"500px"} p={6}>
                                                                   <PopoverArrow />
                                                                   <PopoverCloseButton />
-                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
+                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>   
+   {/* --------------------------------------------------Initial Popup  Login */}
                                                                     <Text  fontSize={"40px"}>Sign In</Text> </Flex></PopoverHeader>
                                                                   <PopoverBody textAlign={"center"}> <Text>Sign in so you can save items to your wishlists, track your orders, and check out faster!</Text>
-                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                  <FormControl isInvalid={(EnailError,passwordError)}>
                                                                             
                                                                             <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
                                                                             {!EnailError ? (
@@ -122,6 +228,9 @@ const Navbar = () => {
                                                                             )}
                                                                              <Input type='password' placeholder='password...' value={Loginpassword}
                                                                               onChange={(e) => setLoginpassword(e.target.value)} />
+                                                                              
+
+                                                                              
                                                                             {!passwordError ? (
                                                                               <FormHelperText>
                                                                                 Enter the password you'd like to receive the newsletter on.
@@ -129,22 +238,17 @@ const Navbar = () => {
                                                                             ) : (
                                                                               <FormErrorMessage>password is required.</FormErrorMessage>
                                                                             )}
-                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign In"}/>
+                                                                            <Button bgColor={"#4b5666"} border={0}  w={"100%"} onClick={()=>HandleSignin()} color={"white"} >{isLoading? <Spinner />:"Sign in"}</Button>
                                                                           </FormControl>
 
-
-                                                                                                                                            
-
-
-                                                                    
                                                                   </PopoverBody>
                                                                   <VStack gap={3}>
                                                                   <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
                                                                     
                                                                     <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
                                                                     <PopoverBody gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
-                                                                             <Text>Welcome! It's quick and easy to set up an account</Text>
-                                                                            <Button  onClick={()=>{setRegistarion(!Registarion)}} bgColor={"#4b5666"} color={"white"}  >Create An Account</Button>
+                                                                     <Text>Welcome! It's quick and easy to set up an account</Text>
+                                                                     <Button  onClick={()=>{setRegistarion(!Registarion)}} bgColor={"#4b5666"} color={"white"}  >Create An Account</Button>
  
                                                                   </PopoverBody></VStack>
                                                                 </PopoverContent>):(<PopoverContent textAlign={"center"} zIndex={4} boxShadow="0 0 10px rgba(0, 0, 0, 0.2)" 
@@ -152,27 +256,29 @@ const Navbar = () => {
                                                                   <PopoverArrow />
                                                                   <PopoverCloseButton />
                                                                   <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
+  {/* --------------------------------------------------------------------Sigin up form */}
                                                                     <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
-                                                                  <PopoverBody textAlign={"center"}> 
-                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                  <PopoverBody  textAlign={"center"}> 
+                                                                  <FormControl isInvalid={( SignininEmailError,SignininfirstnameError,SignininpasswordError)} >
+                                                                    < VStack gap={2}>
                                                                             
-                                                                            <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
-                                                                              <FormHelperText>
+                                                                            <Input  type='email' placeholder='Email...' value={SignininEmail} border={"1px solid black"} onChange={(e) => setsigninEmail(e.target.value)} />
+                                                                            {!SignininEmailError ? (
+                                                                              <FormHelperText >
                                                                                 Enter the email you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>Email is required.</FormErrorMessage>
                                                                             )}
-                                                                             <Input type='text' placeholder='Firstname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
+                                                                             <Input type='text' placeholder='Firstname' value={Signininfirstname} onChange={(e) => setsigninfirstname(e.target.value)} />
+                                                                            {!SignininfirstnameError ? (
                                                                               <FormHelperText>
                                                                                 Enter the Firstname you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>Firstname is required.</FormErrorMessage>
                                                                             )}
-                                                                             <Input type='text' placeholder='lastname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                                                                             <Input type='text' placeholder='lastname' value={Signininlastname} onChange={(e) => setsigninlastname(e.target.value)} />
                                                                             {!EnailError ? (
                                                                               <FormHelperText>
                                                                                 Enter the lastname you'd like to receive the newsletter on.
@@ -180,57 +286,47 @@ const Navbar = () => {
                                                                             ) : (
                                                                               <FormErrorMessage>lastname is required.</FormErrorMessage>
                                                                             )}
-                                                                             <Input type='text' placeholder='Age' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
-                                                                              <FormHelperText>
-                                                                                Enter the Age you'd like to receive the newsletter on.
-                                                                              </FormHelperText>
-                                                                            ) : (
-                                                                              <FormErrorMessage>Age is required.</FormErrorMessage>
-                                                                            )}
-                                                                             <Input type='password' placeholder='password...' value={Loginpassword}
-                                                                              onChange={(e) => setLoginpassword(e.target.value)} />
-                                                                            {!passwordError ? (
+                                                                             
+                                                                             <Input type='password' placeholder='password...' value={Signininpassword}
+                                                                              onChange={(e) => setSigninpassword(e.target.value)} />
+
+                                                                          <Flex flexDirection="column" width="100%" my="1em">
+                                                                                        <Flex width="100%" justify="space-between">
+                                                                                          <Text fontSize="xs">Password strength</Text>
+                                                                                          <Text fontSize="xs" as="b">
+                                                                                            {strengthCount}
+                                                                                          </Text>
+                                                                                        </Flex>
+                                                                                        <Progress
+                                                                                          width="100%"
+                                                                                          value={strengthCount}
+                                                                                          size="sm"
+                                                                                          colorScheme={(strengthCount >= 0 && strengthCount < 30)? "red":(strengthCount >= 30 && strengthCount <= 70)? "yellow": (strengthCount > 70 && strengthCount <= 100)? "green": null
+                                                                                          }
+                                                                                        />
+                                                                                      </Flex>
+                                                                            {!SignininpasswordError ? (
                                                                               <FormHelperText>
                                                                                 Enter the password you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>password is required.</FormErrorMessage>
                                                                             )}
-                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign up"}/>
-                                                                          </FormControl>
+                                                                            <Button bgColor={"#4b5666"} border={0} w={"100%"} onClick={()=>HandleLogin()} color={"white"} >{isLoading? <Spinner />:"Sign UP"}</Button>
+                                                                         </VStack> </FormControl>
 
-
-                                                                                                                                            
-
-
-                                                                    
                                                                   </PopoverBody>
-                                                                  {/* <VStack gap={3}>
-                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
-                                                                    
-                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
-                                                                    <PopoverBody gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
-                                                                            
-                                                                            <Input  bgColor={"#4b5666"} color={"white"} type={"submit"} value={"Create An Account"}/>
-                                                                       
-
-
-                                                                                                                                            
-
-
-                                                                    
-                                                                  </PopoverBody></VStack> */}
+                                                                
                                                                    <Text _hover={{cursor: "pointer"}} onClick={()=>{setRegistarion(!Registarion)}}>Already have an  an account</Text>
                                                                 </PopoverContent>)}
-                                                              </Popover> 
-                                  </Flex>
-                                </Flex>
+                                                              </Popover> }
+                                                       </Flex>
+                                                    </Flex>
                                                    <Box onClick={()=>navigate("/")} display={{base: 'flex', sm: 'flex', md: 'none',lg:'none'}}  h={"100%"}><Img src={logo} h={"100%"}/></Box>
-                                </Flex>
+                                             </Flex>
 
-                                                                        {/* middile part */}
-                                        <Flex h={16} alignItems={'center'}  justifyContent={'space-between'} pr={{base: 0, sm: 0, md:8,lg:8}} pl={{base: 2, sm: 2, md:8,lg:8}} borderBottom={".5px solid gray"}>
+     {/*-------------------------- middile part----------------------------------------- */}
+                                        <Flex h={16} alignItems={'center'}  justifyContent={'space-between'} pr={{base: 0, sm: 0, md:2,lg:2}} pl={{base: 2, sm: 2, md:8,lg:8}} borderBottom={".5px solid gray"}>
                                         <Box display={{base: 'none', sm: 'none', md: 'flex',lg:'flex'}}  h={"100%"}><Img src={logo} h={"80%"}/></Box>
 
                                         <Flex w={{base:"90%" ,sm:"90%",md:"30%"}} alignItems={'center'} justifyContent={{base:"space-around",sm:"space-around"}}  >
@@ -239,7 +335,10 @@ const Navbar = () => {
                                             <Button display={{base: 'flex', sm: 'flex', md: 'flex',lg:'none'}} backgroundColor={"#fdfdf9"} h={"50px"} w={"50px"}
                                             onClick={() => handleClick("md")}
                                             
+                                            
                                             > <GiHamburgerMenu /> </Button>
+
+  {/* -----------------------------------------------------------Small Screen Button Abd Drop Down */}
                                               <Drawer onClose={onClose} isOpen={isOpen} size={"sm"}>
                                                     <DrawerOverlay />
                                                     <DrawerContent>
@@ -247,9 +346,9 @@ const Navbar = () => {
                                                     <DrawerHeader>
                                                       
 
-                                                      <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  onClick={()=>{setFlag(!flage)}}>
+                                                    {  user.role=="undefined"&& <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  onClick={()=>{setFlag(!flage)}}>
                                                            Sign In /Sign up
-                                                        </Box>
+                                                        </Box>}
                                                        
                                                       { flage &&<Modal  isOpen={onClose} onClose={isOpen} size={"full"}>
                                                             <ModalOverlay />
@@ -261,9 +360,10 @@ const Navbar = () => {
                                                             {!Registarion?(<>
                                                                  
                                                                   <Heading ><Flex w={"100%"} justifyContent={"center"}>
-                                                                    <Text  fontSize={"40px"}>Sign In</Text> </Flex></Heading>
+                                                                    <Text  fontSize={"40px"}>Sign In</Text> </Flex></Heading>          
+  {/* ------------------------------------------------------------Sign in in Small screen----------------------------------------------------------------------------- */}
                                                                   <Stack textAlign={"center"}> <Text>Sign in so you can save items to your wishlists, track your orders, and check out faster!</Text>
-                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                  <FormControl isInvalid={(EnailError,passwordError)}>
                                                                             
                                                                             <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
                                                                             {!EnailError ? (
@@ -277,14 +377,13 @@ const Navbar = () => {
                                                                               onChange={(e) => setLoginpassword(e.target.value)} />
                                                                             {!passwordError ? (
                                                                               <FormHelperText>
-                                                                                Enter the password you'd like to receive the newsletter on.
+                                                                                Enter an strong password password .
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>password is required.</FormErrorMessage>
                                                                             )}
-                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign In"}/>
+                                                                            <Button bgColor={"#4b5666"} border={0}  w={"100%"} onClick={()=>HandleSignin()} color={"white"} >{isLoading? <Spinner />:"Sign In"}</Button>
                                                                           </FormControl>
-
 
                                                                                                                                             
 
@@ -301,77 +400,66 @@ const Navbar = () => {
  
                                                                   </Stack></VStack>
                                                                 </>):(<>
-                                                                  
+        {/* --------------------------------------------------------- small Screnn Registration form ---------------------------------------------------- */}
                                                                   <Heading ><Flex w={"100%"} justifyContent={"center"}>
                                                                     <Text  fontSize={"40px"}>Sign Up</Text> </Flex></Heading>
                                                                   <Stack textAlign={"center"}> 
-                                                                  <FormControl isInvalid={{EnailError,passwordError}}>
+                                                                  <FormControl isInvalid={( SignininEmailError,SignininfirstnameError,SignininpasswordError)}>
                                                                             
-                                                                            <Input type='email' placeholder='Email...' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
+                                                                            <Input type='email' placeholder='Email...' value={SignininEmail} onChange={(e) => setsigninEmail(e.target.value)} />
+                                                                            {!SignininEmailError ? (
                                                                               <FormHelperText>
                                                                                 Enter the email you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>Email is required.</FormErrorMessage>
                                                                             )}
-                                                                             <Input type='text' placeholder='Firstname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
+                                                                             <Input type='text' placeholder='Firstname' value={Signininfirstname} onChange={(e) => setsigninfirstname(e.target.value)} />
+                                                                            {!SignininfirstnameError ? (
                                                                               <FormHelperText>
                                                                                 Enter the Firstname you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>Firstname is required.</FormErrorMessage>
                                                                             )}
-                                                                             <Input type='text' placeholder='lastname' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
+                                                                             <Input type='text' placeholder='lastname' value={Signininlastname} onChange={(e) => setsigninlastname(e.target.value)} />
+                                                                            {!SignininlastnameError ? (
                                                                               <FormHelperText>
                                                                                 Enter the lastname you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>lastname is required.</FormErrorMessage>
                                                                             )}
-                                                                             <Input type='text' placeholder='Age' value={LoginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                                                                            {!EnailError ? (
-                                                                              <FormHelperText>
-                                                                                Enter the Age you'd like to receive the newsletter on.
-                                                                              </FormHelperText>
-                                                                            ) : (
-                                                                              <FormErrorMessage>Age is required.</FormErrorMessage>
-                                                                            )}
-                                                                             <Input type='password' placeholder='password...' value={Loginpassword}
-                                                                              onChange={(e) => setLoginpassword(e.target.value)} />
-                                                                            {!passwordError ? (
+                                                                              
+                                                                             <Input type='password' placeholder='password...' value={Signininpassword}
+                                                                              onChange={(e) => setSigninpassword(e.target.value)} />
+                                                                              <Flex flexDirection="column" width="100%" my="1em">
+                                                                                              <Flex width="100%" justify="space-between">
+                                                                                                <Text fontSize="xs">Password strength</Text>
+                                                                                                <Text fontSize="xs" as="b">
+                                                                                                  {strengthCount}
+                                                                                                </Text>
+                                                                                              </Flex>
+                                                                                              <Progress
+                                                                                                width="100%"
+                                                                                                value={strengthCount}
+                                                                                                size="sm"
+                                                                                                colorScheme={(strengthCount >= 0 && strengthCount < 30)? "red":(strengthCount >= 30 && strengthCount <= 70)? "yellow": (strengthCount > 70 && strengthCount <= 100)? "green": null
+                                                                                                }
+                                                                                              />
+                                                                                            </Flex>
+                                                                            {!SignininpasswordError ? (
                                                                               <FormHelperText>
                                                                                 Enter the password you'd like to receive the newsletter on.
                                                                               </FormHelperText>
                                                                             ) : (
                                                                               <FormErrorMessage>password is required.</FormErrorMessage>
                                                                             )}
-                                                                            <Input bgColor={"#4b5666"} border={0} type={"submit"} color={"white"} value={"Sign up"}/>
+                                                                            <Button bgColor={"#4b5666"} border={0} w={"100%"} onClick={()=>HandleLogin()} color={"white"} >{isLoading? <Spinner />:"Sign UP"}</Button>
                                                                           </FormControl>
 
-
-                                                                                                                                            
-
-
-                                                                    
                                                                   </Stack>
-                                                                  {/* <VStack gap={3}>
-                                                                  <PopoverHeader ><Flex w={"100%"} justifyContent={"center"}>
-                                                                    
-                                                                    <Text  fontSize={"40px"}>Sign Up</Text> </Flex></PopoverHeader>
-                                                                    <PopoverBody gap={6} textAlign={"center"}> <Text color={"white"}>Welcome! It's quick and easy to set up an account</Text>
-                                                                            
-                                                                            <Input  bgColor={"#4b5666"} color={"white"} type={"submit"} value={"Create An Account"}/>
-                                                                       
-
-
-                                                                                                                                            
-
-
-                                                                    
-                                                                  </PopoverBody></VStack> */}
+            
                                                                    <Text _hover={{cursor: "pointer"}} onClick={()=>{setRegistarion(!Registarion)}}>Already have an  an account</Text>
                                                                 </>)}
                                                               
@@ -389,7 +477,7 @@ const Navbar = () => {
                                                     </DrawerHeader>
                                                     <DrawerBody>
                                                         <VStack>
-
+                          {/* ---------------------------------------------------------------------------------- small screnn menu itemes----------------------------------------------- */}
                                                           <Box borderBottom={"1px solid black"} w={"100%"} h={16} >
                                                                           
                                                               <Text fontSize={"2xl"} >New!</Text>
@@ -421,30 +509,24 @@ const Navbar = () => {
                                                         <Box borderBottom={"1px solid black"} w={"100%"} h={16}  > 
                                                          <Text fontSize={"2xl"}>Gifts</Text>
                                                         </Box>
-                                                      
                                                         </VStack>
-                                                    </DrawerBody>
-                                                  
-                                                        
-                                                    </DrawerContent>
+                                                    </DrawerBody>    
+                                                  </DrawerContent>
                                                 </Drawer>
                                           
                                         </Flex>
                                         </Flex>
-
-
-                                            <Flex h={16} display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}} alignItems={'center'} justifyContent={'space-between'}
+                                            <Flex h={16} display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}} 
+                                            alignItems={'center'} justifyContent={'space-between'}
                                             borderBottom={".5px solid gray"}>
                                             <Box>
-                                                <MegaMenu/>
+     {/* -----------------------------------------------------------------------------Navbar Mega menu */}
+                                             <MegaMenu/>
                                             </Box>
-
-                                            <Flex alignItems={'center'}>
-                                                
+                                            <Flex alignItems={'center'}>  
                                             </Flex>
-                                            </Flex>
-        
-      </Box>
+                                            </Flex>  
+                                       </Box>
    
   );
 };
