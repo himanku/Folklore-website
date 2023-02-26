@@ -1,8 +1,10 @@
 import { Box, Grid, Image, Img, Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import React from 'react'
 
 const MegaMenu = () => {
+
+    const navigate=useNavigate()
     return (
         <Box w={{base:"100%",lg:"95%"}} margin="auto" > 
         <Grid templateColumns={{base:"repeat(2, 1fr)", sm:"repeat(3, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(19, 1fr)"}} gap={10} >
@@ -15,7 +17,7 @@ const MegaMenu = () => {
             </MenuButton>
                 <MenuList>
                 <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")} >
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Accessories</MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Beauty & Wellness </MenuItem>
@@ -28,7 +30,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shoes      </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >BHLDN WeddingsPlywoods    </MenuItem>
                     </Box>
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >{'Spring'}Time to Celebrate      </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Trending: Citrus Shades </MenuItem>
@@ -56,7 +58,7 @@ const MegaMenu = () => {
             </MenuButton>
             <MenuList>
                 <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
 
 
 
@@ -72,7 +74,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >{'Spring'}Time to Celebrate      </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Trending: Citrus Shades </MenuItem>
@@ -100,7 +102,7 @@ const MegaMenu = () => {
             </MenuButton>
             <MenuList>
             <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
 
 
 
@@ -116,7 +118,7 @@ const MegaMenu = () => {
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Dresses      </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Wedding Guest Dresses    </MenuItem>
                     </Box>
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
                     <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontWeight="200" fontSize={{base:"9px",sm:"10px",md:"30px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Shop by Category</MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >{'Spring'}Time to Celebrate      </MenuItem>
                         <MenuItem fontStyle="Arial,Helvetica,sans-serif" fontSize={{base:"9px",sm:"10px",md:"12px"}} p={{base:"3px 0px 3px 5px", md:"4px 0px 4px 10px"}} >Trending: Citrus Shades </MenuItem>
@@ -189,7 +191,7 @@ const MegaMenu = () => {
             </MenuButton>
             <MenuList>
             <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
 
 
 
@@ -233,7 +235,7 @@ const MegaMenu = () => {
             </MenuButton>
             <MenuList>
             <Grid templateColumns={{base:"repeat(2, 1fr)",md:"repeat(4, 1fr)",lg:"repeat(3, 1fr)",xl:"repeat(3, 1fr)"}} p={{base:"0px",lg:"0px 15px 0px 17px",xl:"0px 30px 0px 35px"}}  >
-                    <Box alignItems={"center"}>
+                    <Box alignItems={"center"} onClick={()=>navigate("/dress")}>
 
 
 
