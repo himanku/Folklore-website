@@ -64,7 +64,7 @@
 //                             <Box key={el.id}>
 //                                 <Box>
 //                                     <Text>Subtotal</Text>
-//                                     <Text>${el.price}</Text>
+//                                     <Text>₹{el.price}</Text>
 //                                 </Box>
 //                                 <Box>
 //                                     <Text></Text>
@@ -121,6 +121,22 @@ import axios from "axios";
 // import Navbar from "../Components/Navbar";
 // import Footer from "../Components/Footer";
 
+// const CartManualData=[
+//   {
+//     "_id":"63fa0fb14a326ab9afba6b9a",
+//     "img1": "https://ii2.pepperfry.com/media/catalog/product/m/i/494x544/miranda-3-seater-sofa-in-navy-blue-colour-by-woodsworth-miranda-3-seater-sofa-in-navy-blue-colour-by-2vzyyg.jpg",
+//     "img2": "https://ii2.pepperfry.com/media/catalog/product/m/i/90x99/miranda-1-seater-sofa-in-navy-blue-colour-by-woodsworth-miranda-1-seater-sofa-in-navy-blue-colour-by-5o0ads.jpg",
+//     "img3": "https://ii2.pepperfry.com/media/catalog/product/m/i/198x99/miranda-2-seater-sofa-in-navy-blue-colour-by-woodsworth-miranda-2-seater-sofa-in-navy-blue-colour-by-4rxwiv.jpg",
+//     "img4": "https://ii2.pepperfry.com/media/catalog/product/m/i/90x99/miranda-1-seater-sofa-in-navy-blue-colour-by-woodsworth-miranda-1-seater-sofa-in-navy-blue-colour-by-5o0ads.jpg",
+//     "name": "Miranda 3 Seater Sofa In Navy Blue Colour",
+//     "brand": "Woodsworth",
+//     "lowprice": 43299,
+//     "highprice": 60999,
+//     "rating": 4.1,
+//     "quantity": 1,
+// }
+// ]
+
 const CartData = () => {
   const [Cart_Data, set_Cart_Data] = useState([]);
   const [pin, setPin] = useState("");
@@ -130,13 +146,23 @@ const CartData = () => {
   const [total, settotal] = useState(0);
   const [coupon, setcoupon] = useState("");
   const [couponCount, setcouponCount] = useState(0);
-//   const navigate = useNavigate();
+  const user=getItem("userData")||{}
+  const token=user.token;
 
-//   // colapse function for price details
+  const navigate = useNavigate();
+
+  // colapse function for price details
   const Get_All_Cart_Data = async () => {
-    console.log("data")
+    // console.log("data")
     let res = await axios
-      .get(`https://doubtful-wasp-cowboy-boots.cyclic.app/products/cart`)
+      .get(`https://vast-puce-mussel-tie.cyclic.app/carts`,
+      {
+        headers: {
+          Authorization:  token,
+         
+        },
+      }
+      )
       .then((res) => {
         set_Cart_Data(res.data);
         console.log(res);
@@ -149,8 +175,8 @@ const CartData = () => {
   const handleTotal = () => {
     let Total = 0;
     Cart_Data.map((ele) => {
-      let addgst = (ele.price / 100) * 18;
-      let singleprice = addgst + ele.price;
+      let addgst = (ele.lowprice / 100) * 18;
+      let singleprice = addgst + ele.lowprice;
       Total += Math.floor(singleprice * ele.quantity);
     });
     settotal(Total);
@@ -170,17 +196,17 @@ const CartData = () => {
       });
       axios
       .patch(
-        `https://doubtful-wasp-cowboy-boots.cyclic.app/products/quantity/${item.id}`,
+        `https://vast-puce-mussel-tie.cyclic.app/carts/update/${item.id}`,
         item,
         {
           headers: {
-            Authorization: "Bearer" + " " + token,
-            GSTIN: GSTIN,
+            Authorization:  token,
+          
           },
         }
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -209,12 +235,12 @@ const CartData = () => {
       });
       axios
         .patch(
-          `https://doubtful-wasp-cowboy-boots.cyclic.app/products/quantity/${item.id}`,
+          `https://vast-puce-mussel-tie.cyclic.app/carts/update/${item.id}`,
           item,
           {
             headers: {
-              Authorization: "Bearer" + " " + token,
-              GSTIN: GSTIN,
+              Authorization:  token,
+             
             },
           }
         )
@@ -250,11 +276,11 @@ const CartData = () => {
     set_Cart_Data(removedata);
     axios
       .delete(
-        `https://doubtful-wasp-cowboy-boots.cyclic.app/products/cart/${item.id}`,
+        `https://vast-puce-mussel-tie.cyclic.app/carts/delete/${item._id}`,
         {
           headers: {
-            Authorization: "Bearer" + " " + token,
-            GSTIN: GSTIN,
+            Authorization: token,
+            
           },
         }
       )
@@ -305,24 +331,34 @@ const CartData = () => {
       });
     }
   };
+
+  const handeltotalPrice=()=>{
+
+    localStorage.setItem("totalPrice",JSON.stringify({total}))
+    navigate("/checkoutpage")
+  }
+
+  
   return (
     <>
 
     {/* <Navbar/> */}
 
-      <Box mt="90px">
+      <Box mt="20px">
         <Box
           display="flex"
+          bgColor="#566573"
           w="67%"
           h="50px"
           alignItems={"center"}
           borderBottom={"0.5px solid RGBA(0, 0, 0, 0.08)"}
           borderTop="0.5px solid RGBA(0, 0, 0, 0.08)"
           ml="10px"
-          mt="70px"
+          mb="30px"
+          // mt="70px"
         >
           {/* cart page startting from here */}
-          <Text fontWeight={"semibold"} fontSize={"20px"}>
+          <Text  fontWeight={"semibold"} color="white" align="center" ml="30px" fontSize={"30px"}>
             My Cart
           </Text>
           
@@ -341,16 +377,17 @@ const CartData = () => {
                 w="100%"
                 px="50px"
                 py="10px"
-                bgColor="#F5F5F5"
+                bgColor="#566573"
                 m="auto"
+                
               >
-                <Text>Item</Text>
-                <Text>Quantity</Text>
-                <Text>Price (Inclusive of GST)</Text>
+                <Text color='white'>Item</Text>
+                <Text color='white'>Quantity</Text>
+                <Text color='white'>Price (Inclusive of GST)</Text>
               </Box>
               {/*  mapping all the cart data */}
               {Cart_Data.map((item, index) => (
-                <div key={item.id}>
+                <div key={item._id}>
                   <SingleItem
                     key={item._id}
                     item={item}
@@ -383,19 +420,20 @@ const CartData = () => {
               </Button>
               <Button
                 h="45px"
-                _hover={{ backgroundColor: "#fb8339", color: "grey" }}
+                _hover={{ backgroundColor: "#566573", color: "grey" }}
                 color="white"
                 borderRadius={0}
                 px="30px"
-                bgColor="#fb8339"
-                // onClick={handleRedirected}
+                bgColor="#566573"
+                onClick={handeltotalPrice}
               >
                 PLACE ORDER
               </Button>
             </Box>
           </Box>
-          <VStack w="30%" my="10px" mx="10px">
+          <VStack  w="30%" my="10px" mx="10px">
             <Box
+              mt="-85px"
               h="auto"
               pb="20px"
               style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
@@ -403,7 +441,7 @@ const CartData = () => {
             >
               {/*  pincode added and shiping section */}
               <Box
-                bgColor={"#4d4d4d"}
+                bgColor={"#566573"}
                 w="100%"
                 h="40px"
                 mb={"10px"}
@@ -419,11 +457,11 @@ const CartData = () => {
                 >
                   Payment Summary
                 </Text>
-                <Image
+                {/* <Image
                   filter={"invert(100%)"}
                   w="20px"
                   src="https://www.industrybuying.com/static/desktop-payment/assets/svg/rupee-circle-icon.svg"
-                />
+                /> */}
               </Box>
               <Text
                 color="RGBA(0, 0, 0, 0.48)"
@@ -471,8 +509,8 @@ const CartData = () => {
                     margin="auto"
                     py="20px"
                   >
-                    <Text>Subtotal:Rs.</Text>
-                    <Text>{total.toLocaleString()}</Text>
+                    <Text>Subtotal:</Text>
+                    <Text>₹{total.toLocaleString()}</Text>
                   </Box>
                   <Box
                     display={"flex"}
@@ -495,8 +533,8 @@ const CartData = () => {
                     py="20px"
                     fontSize={"20px"}
                   >
-                    <Text>Total Price</Text>
-                    <Text color="#e45301">{total.toLocaleString()}</Text>
+                    <Text>Total Price: </Text>
+                    <Text>₹{total.toLocaleString()}</Text>
                   </Box>
                   <HStack
                     w="100%"
@@ -525,7 +563,7 @@ const CartData = () => {
               w="100%"
             >
               <Box
-                bgColor={"#4d4d4d"}
+                bgColor={"#566573"}
                 w="100%"
                 h="40px"
                 mb={"10px"}
@@ -584,7 +622,7 @@ const CartData = () => {
               w="100%"
             >
               <Box
-                bgColor={"#4d4d4d"}
+                bgColor={"#566573"}
                 w="100%"
                 h="40px"
                 mb={"10px"}
@@ -619,7 +657,7 @@ const CartData = () => {
                   as={Link}
                   position={"relative"}
                   left="-60px"
-                  color="#fb8869"
+                  // color="#fb8869"
                   verticalAlign="middle"
                   zIndex="20"
                   onClick={() => handleDiscount()}
@@ -643,7 +681,7 @@ const CartData = () => {
               <Box>
                 <Box display={"flex"}>
                   <Badge
-                    bgColor={"#fb8869"}
+                    bgColor={"#566573"}
                     alignItems="flex-start"
                     color="white"
                   >
@@ -652,7 +690,7 @@ const CartData = () => {
                 </Box>
                 <Flex w="100%" justifyContent={"space-between"}>
                   <Text>DUBAM300</Text>
-                  <Link onClick={() => setcoupon("DUBAM300")} color={"#E53E3E"}>
+                  <Link onClick={() => setcoupon("DUBAM300")} color={"#3498DB"} >
                     Apply Now
                   </Link>
                 </Flex>
@@ -665,7 +703,7 @@ const CartData = () => {
               <Box>
                 <Box display={"flex"} pt="30px" pb="4px">
                   <Badge
-                    bgColor={"#fb8869"}
+                    bgColor={"#566573"}
                     alignItems="flex-start"
                     color="white"
                   >
@@ -674,7 +712,7 @@ const CartData = () => {
                 </Box>
                 <Flex w="100%" justifyContent={"space-between"}>
                   <Text>APP300</Text>
-                  <Link onClick={() => setcoupon("APP300")} color={"#E53E3E"}>
+                  <Link onClick={() => setcoupon("APP300")} color={"#3498DB"}>
                     Apply Now
                   </Link>
                 </Flex>
@@ -703,9 +741,9 @@ export const SingleItem = ({
     const toast = useToast();
     const [show, setShow] = React.useState(true);
     const totalPrice = (item) => {
-      let tax = Math.floor(item.price / 100) * 18;
+      let tax = Math.floor(item.lowprice / 100) * 18;
       let totaltax = tax * item.quantity;
-      let total = item.price * item.quantity + totaltax;
+      let total = item.lowprice * item.quantity + totaltax;
       return { total, tax: totaltax };
     };
     // colapse function for price details
@@ -714,32 +752,35 @@ export const SingleItem = ({
       <Box h="250px" key={item._id}>
         {/* initial sec item quantity */}
         <Text
-          mb="30px"
+          mb="10px"
           textAlign={"left"}
           w="300px"
           fontSize="15px"
           display="flex"
           pl="10px"
+          mt="20px"
         >
-          {item.title}
+          {item.name}
         </Text>
   
-        <Box display="flex" w="95%" justifyContent="space-between" m="auto">
-          <Box display="flex" fontSize="14px">
-            <Box py="10px" px="10px" w="30%">
+        <Box display="flex"  w="95%" justifyContent="space-between" m="auto">
+          <Box mt="20px"  display="flex" fontSize="14px">
+            <Box py="10px"  px="10px" w="30%">
               <Image
-                src={item.images[0].image_url}
+                // src={item.images[0].image_url}
+                src={item.img1}
                 style={{
-                  width: "50px",
-  
-                  height: "auto",
-                  objectFit: "cover",
+                  marginTop:"-20px",
+                  width: "500px",
+                  // border:"solid red",
+                  height: "200px",
+                  // objectFit: "cover",
                 }}
               />
             </Box>
             <Box textAlign={"left"} w="200px">
               <Text> Brand:{item.brand}</Text>
-              <Text> category:{item.category}</Text>
+              {/* <Text> category:{item.category}</Text> */}
               {/* <Text> {item.Spindle_Speed}</Text> */}
               {!dd ? (
                 <Button
@@ -816,7 +857,7 @@ export const SingleItem = ({
   
           <Box w="30%">
             <HStack w="50%" m="auto" justifyContent={"space-between"}>
-              <span>RS:{totalPrice(item).total.toLocaleString()}</span>
+              <span>₹{totalPrice(item).total.toLocaleString()}</span>
               <Button
                 fontSize={"14px"}
                 color="#4299E1"
@@ -859,8 +900,8 @@ export const SingleItem = ({
                 bgColor="#F5F5F5"
               >
                 <Box display="flex" w="95%" justifyContent="space-between">
-                  <span> Price Rs.</span>
-                  <span>{item.price.toLocaleString()}</span>
+                  <span> Price ₹</span>
+                  <span>{item.lowprice.toLocaleString()}</span>
                 </Box>
                 <Box
                   display="flex"
@@ -869,7 +910,7 @@ export const SingleItem = ({
                   m="auto"
                 >
                   <span> GST@{18}%</span>
-                  <span>+Rs.{totalPrice(item).tax.toLocaleString()}</span>
+                  <span>+₹{totalPrice(item).tax.toLocaleString()}</span>
                 </Box>
                 <Box
                   display="flex"
