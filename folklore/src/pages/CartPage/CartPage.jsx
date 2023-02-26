@@ -136,8 +136,10 @@ import axios from "axios";
 //     "quantity": 1,
 // }
 // ]
+import {getItem} from "../../utility/localStorage"
 
 const CartData = () => {
+  
   const [Cart_Data, set_Cart_Data] = useState([]);
   const [pin, setPin] = useState("");
   const toast = useToast();
