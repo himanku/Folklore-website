@@ -6,19 +6,17 @@ const dressRouter = express.Router();
 
 
 // ----------------- DRESS DATA GET REQUEST ----------------- //
-/*
-dressRouter.get("/", async (request, response) => {
-    const query = request.query;
+
+dressRouter.get("/:id", async (request, response) => {
+    const ID = request.params.id;
 
     try {
-        const data = await DressModel.find(query);
+        const data = await DressModel.find({ _id: ID });
         response.send(data);
     } catch (error) {
         response.send({ "Message": "Cannot able to get the dresses data", "Error": error.message });
     }
 });
-*/
-
 
 
 // ----------------- DRESS DATA GET REQUEST ----------------- //
@@ -30,7 +28,7 @@ dressRouter.get("/", async (request, response) => {
         const page = parseInt(request.query.page) - 1 || 0;
         const limit = parseInt(request.query.limit) || 5;
         const search = request.query.search || "";
-        let sort = request.query.sort || "rating";
+        let sort = request.query.sort || "rating" || "lowprice";
         let brand = request.query.brand || "All";
 
         const brandOptions = [ "Maxi_Dress", "Sleeve_Dress", "Mini_Dress", "Tunic_Dress" ];

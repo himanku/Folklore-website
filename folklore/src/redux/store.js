@@ -1,15 +1,18 @@
-import {legacy_createStore,compose,combineReducers,applyMiddleware} from "redux"
-import thunk from "redux-thunk"
-import { Authreducer } from "./Auth/auth.reducer"
-import { Cartreducer } from "./Cart/car.reducer"
-import { Productreducer } from "./Product/product.reducer"
+import {legacy_createStore,compose,combineReducers,applyMiddleware} from "redux";
+import thunk from "redux-thunk";
+import { Authreducer } from "./Auth/auth.reducer";
+import { Cartreducer } from "./Cart/car.reducer";
+import { Productreducer } from "./Product/product.reducer";
+import { reducer } from "./Dress/reducer";
+
 
 const rootReducer=combineReducers({
     product:Productreducer,
     cart:Cartreducer,
-    auth: Authreducer
+    auth: Authreducer,
+    dress: reducer
 })
 
 const composer=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export const store=legacy_createStore(rootReducer,composer(applyMiddleware(thunk)))
+export const store = legacy_createStore(rootReducer,composer(applyMiddleware(thunk)));
