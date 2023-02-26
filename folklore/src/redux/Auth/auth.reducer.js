@@ -21,6 +21,7 @@ export const Authreducer = (state = initialState, { type, payload }) => {
     }
     case types.ADD_USER_SUCCESS: {
       
+      setItem("newuser",payload);
       return {
         ...state,
         isLoading: false,
@@ -45,7 +46,10 @@ export const Authreducer = (state = initialState, { type, payload }) => {
       };
     }
     case types.GET_USER_SUCCESS: {
-      setItem("userData", payload);
+      setItem("userData", payload.data);
+      const user=getItem("userData")||{}
+      const reques=payload.request
+      setItem("userData", {...user,Loginstatus:reques.status});
       return {
         ...state,
         isLoading: false,

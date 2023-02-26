@@ -41,6 +41,7 @@ import {
   MenuItem,
   Spinner,
   Progress,
+  useToast,
 } from '@chakra-ui/react';
 import {HiLanguage,HiUser} from "react-icons/hi2";
 import { BsBag ,BsSearch} from "react-icons/bs";
@@ -60,7 +61,13 @@ const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [flage,setFlag]=useState(false)
     const [Registarion, setRegistarion] = useState(false);
+    const toast = useToast();
 
+    const navigate=useNavigate()
+
+    const user=getItem("userData")||{}
+
+    const newuser=getItem("newuser")||{}
 
   
     const handleClick = (newSize) => {
@@ -112,8 +119,23 @@ const Navbar = () => {
           "email":LoginEmail,
           "password":Loginpassword
          }
-         console.log(data)
-         dispatch(Login(data))
+        
+         try {
+            dispatch(Login(data))
+            
+
+         } catch (error) {
+          toast({
+            title: "invalid username or password ",
+            description: "",
+            status: "error",
+            duration: 6000,
+            isClosable: true,
+            backgroundColor:"red"
+          })
+          
+         }
+       
 
          setLoginEmail("")
          setLoginpassword("")
@@ -149,9 +171,6 @@ setSigninpassword("")
     }
     
     
-    const navigate=useNavigate()
-
-    const user=getItem("userData")
    
                                                         //  password strength validation
     useEffect(() => {
@@ -172,7 +191,65 @@ setSigninpassword("")
       hasSymbol.test(Signininpassword) == true ? setsymbolNum(1) : setsymbolNum(0);
       let temp2Count = ((alphaNum * 30) + (symbolNum * 30) + (passTemp * 40));
       setstrengthCount(temp2Count);
-    }, [Loginpassword.length,strengthCount,Signininpassword.length]);
+
+      if(!isLoading&&user.Loginstatus==200&&user.Message==`${user.name} you are successfully logged in`){
+        toast({
+          title: "successfully sign in ",
+          description: "",
+          status: "success",
+          duration: 6000,
+          isClosable: true,
+         
+        });
+         setItem("userData", {...user,Loginstatus:0});
+      }
+      if(!isLoading&&user.Message&&!user.role){
+        toast({
+          title: "please Check Your username or Password",
+          description: "",
+          status: "error",
+          duration: 6000,
+          isClosable: true,
+          backgroundColor:"red"
+         
+        });
+         setItem("userData", {...user,Loginstatus:0,Message:null});
+      }
+
+      if(!isLoading&&newuser.Message&&newuser.Message=="New User Successfully Registered! Please Logged In"){
+        toast({
+          title: `${newuser.Message}`,
+          description: "",
+          status: "success",
+          duration: 6000,
+          isClosable: true,
+         
+        });
+        setItem("newuser", {...newuser,Message:null});
+      }
+      if(!isLoading&&newuser.Message&&newuser.Message!=null&&newuser.Message!=="New User Successfully Registered! Please Logged In"){
+        toast({
+          title: `${newuser.Message}`,
+          description: "",
+          status: "error",
+          duration: 6000,
+          isClosable: true,
+          backgroundColor:"red"
+         
+        });
+         setItem("newuser", {...newuser,Message:null});
+      }
+
+
+
+
+
+
+    }, [Loginpassword.length,strengthCount,Signininpassword.length,isLoading,user,newuser]);
+
+    
+
+    
  
   return (
    
@@ -180,10 +257,10 @@ setSigninpassword("")
          <Box bg={useColorModeValue('#fdfdf9', '#fdfdf9')} px={2}  position="sticky" top={0} zIndex={4}>
 
                                 <Flex h={8} alignItems={'end'}  justifyContent={{base: 'center', sm: 'center', md: 'center',lg:'end'}} pr={12} > {/*------------------------------------- top part */}
-                                <Flex justifyContent={'space-around'} gap={6} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}>
+                                <Flex justifyContent={'space-around'} gap={6} mt={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}>
                                 <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                 <HiLanguage/> English</Flex>
-                                <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
+                                <Flex gap={2} alignItems={'center'}   display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                                             
    {/* ------------------------------------------------------------Logined user Dropdown */}
                                                     { user &&(user.role=="admin"||user.role=="user" ) &&<Menu>
@@ -196,7 +273,7 @@ setSigninpassword("")
                                                           <MenuItem>Addresses & Payments</MenuItem>
                                                           <MenuItem>Order History</MenuItem>
                                                           <MenuItem>Wish List</MenuItem>
-                                                         { user&&user.role=="admin" && <MenuItem>Admin Page</MenuItem>}
+                                                         { user&&user.role=="admin" && <MenuItem onClick={()=>navigate("/admin/dashboard")}>Admin Page</MenuItem>}
                                                           <MenuItem onClick={Logout}>Sign Out</MenuItem>
                                                             
                                                           </MenuList>
@@ -326,12 +403,12 @@ setSigninpassword("")
                                              </Flex>
 
      {/*-------------------------- middile part----------------------------------------- */}
-                                        <Flex h={16} alignItems={'center'}  justifyContent={'space-between'} pr={{base: 0, sm: 0, md:2,lg:2}} pl={{base: 2, sm: 2, md:8,lg:8}} borderBottom={".5px solid gray"}>
-                                        <Box display={{base: 'none', sm: 'none', md: 'flex',lg:'flex'}}  h={"100%"}><Img src={logo} h={"80%"}/></Box>
+                                        <Flex h={16} alignItems={'center'}  justifyContent={{base:"space-evenly",md:'space-between'}} pr={{base: 0, sm: 0, md:2,lg:2}} pl={{base: 2, sm: 2, md:8,lg:8}} borderBottom={".5px solid RGBA(0, 0, 0, 0.24)"}>
+                                        <Box display={{base: 'none', sm: 'none', md: 'flex',lg:'flex'}}  h={"100%"}><Img onClick={()=>navigate("/")} src={logo} h={"80%"}/></Box>
 
                                         <Flex w={{base:"90%" ,sm:"90%",md:"30%"}} alignItems={'center'} justifyContent={{base:"space-around",sm:"space-around"}}  >
-                                            <Flex border={"1px solid gray"} borderRadius={10} w={{base:"100%" ,sm:"100%"}} p={1}> <Input w={{base:"80%" ,sm:"80%"}} border={0}/><Button backgroundColor={"#fdfdf9"}><BsSearch/></Button></Flex>
-                                            <Button backgroundColor={"#fdfdf9"}><BsBag/></Button>
+                                            <Flex border={"1px solid RGBA(0, 0, 0, 0.24)"} borderRadius={10} w={{base:"100%" ,sm:"100%"}} p={1}> <Input w={{base:"80%" ,sm:"80%"}} border={"0px"}/><Button backgroundColor={"#fdfdf9"}><BsSearch/></Button></Flex>
+                                            <Button onClick={()=>navigate("/cartpage")} backgroundColor={"#fdfdf9"}><BsBag/></Button>
                                             <Button display={{base: 'flex', sm: 'flex', md: 'flex',lg:'none'}} backgroundColor={"#fdfdf9"} h={"50px"} w={"50px"}
                                             onClick={() => handleClick("md")}
                                             
@@ -346,7 +423,7 @@ setSigninpassword("")
                                                     <DrawerHeader>
                                                       
 
-                                                    {  user.role=="undefined"&& <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  onClick={()=>{setFlag(!flage)}}>
+                                                    {  !user.role && <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  onClick={()=>{setFlag(!flage)}}>
                                                            Sign In /Sign up
                                                         </Box>}
                                                        
@@ -478,23 +555,30 @@ setSigninpassword("")
                                                     <DrawerBody>
                                                         <VStack>
                           {/* ---------------------------------------------------------------------------------- small screnn menu itemes----------------------------------------------- */}
-                                                          <Box borderBottom={"1px solid black"} w={"100%"} h={16} >
+                                                    { user&&user.role=="admin" && <Box onClick={()=>navigate("/admin/dashboard")} 
+                                                    borderBottom={"1px solid black"} w={"100%"} h={16} >
+                                                                          
+                                                                          <Text fontSize={"2xl"} >Admin Page</Text>
+                                                                                  </Box>}
+                                                                                  { user &&(user.role=="admin"||user.role=="user" ) &&  <Button onClick={Logout}>Sign Out</Button> }                      
+                                                        
+                                                          <Box onClick={()=>navigate("/dress")} borderBottom={"1px solid black"} w={"100%"} h={16} >
                                                                           
                                                               <Text fontSize={"2xl"} >New!</Text>
                                                                       </Box>
-                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                        <Box onClick={()=>navigate("/dress")} borderBottom={"1px solid black"} w={"100%"} h={16}  >
                                                           <Text fontSize={"2xl"} >Dresses</Text>
                                                                       </Box>
-                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                        <Box onClick={()=>navigate("/dress")} borderBottom={"1px solid black"} w={"100%"} h={16}  >
                                                           <Text fontSize={"2xl"}  >Clothing</Text>
                                                                       </Box>
-                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                        <Box onClick={()=>navigate("/dress")} borderBottom={"1px solid black"} w={"100%"} h={16}  >
                                                           <Text fontSize={"2xl"}  >Shoes</Text>
                                                                       </Box>
                                                         <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
                                                           <Text fontSize={"2xl"}  >Accessories</Text>
                                                                       </Box>
-                                                        <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
+                                                        <Box onClick={()=>navigate("/dress")} borderBottom={"1px solid black"} w={"100%"} h={16}  >
                                                           <Text fontSize={"2xl"} >Weddings</Text>
                                                                       </Box>
                                                         <Box  borderBottom={"1px solid black"} w={"100%"} h={16} >
@@ -506,7 +590,7 @@ setSigninpassword("")
                                                         <Box  borderBottom={"1px solid black"} w={"100%"} h={16}  >
                                                           <Text fontSize={"2xl"} >Garden & Outdoor</Text>
                                                                       </Box>
-                                                        <Box borderBottom={"1px solid black"} w={"100%"} h={16}  > 
+                                                        <Box onClick={()=>navigate("/dress")} borderBottom={"1px solid black"} w={"100%"} h={16}  > 
                                                          <Text fontSize={"2xl"}>Gifts</Text>
                                                         </Box>
                                                         </VStack>
@@ -518,7 +602,7 @@ setSigninpassword("")
                                         </Flex>
                                             <Flex h={16} display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}} 
                                             alignItems={'center'} justifyContent={'space-between'}
-                                            borderBottom={".5px solid gray"}>
+                                            borderBottom={".5px solid RGBA(0, 0, 0, 0.24)"}>
                                             <Box>
      {/* -----------------------------------------------------------------------------Navbar Mega menu */}
                                              <MegaMenu/>
