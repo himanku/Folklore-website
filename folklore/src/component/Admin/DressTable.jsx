@@ -40,7 +40,6 @@ const DressTable = ({page, search, sort, filterbrand}) => {
             <Table variant='striped' colorScheme='purple'>
                 <Thead>
                 <Tr textAlign={"center"}>
-                    <Th fontSize="16px">ID</Th>
                     <Th fontSize="16px">IMAGE</Th>
                     <Th fontSize="16px">NAME</Th>
                     <Th fontSize="16px">BRAND</Th>

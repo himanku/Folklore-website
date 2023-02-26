@@ -14,14 +14,26 @@ import {
     VStack,
     AvatarBadge,
     Image,
+    useToast,
   } from "@chakra-ui/react";
   import { FiChevronDown, FiMenu } from "react-icons/fi";
   import React from "react";
+import { useNavigate } from "react-router-dom";
   
   export const MobileNav = ({ onOpen, ...rest }) => {
+    const navigate = useNavigate();
+    const toast = useToast();
 
     const handleLogout = () => {
-
+      localStorage.removeItem("token");
+      toast({
+        title: "Logout Successful",
+        status: "success",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      })
+    navigate("/")
     }
     return (
       <Flex

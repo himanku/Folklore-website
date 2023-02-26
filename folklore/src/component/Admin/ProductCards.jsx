@@ -23,7 +23,7 @@ import {
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addFurniture } from "../../redux/Admin/AdminFurniture/action";
+import { addFurniture, getSofas } from "../../redux/Admin/AdminFurniture/action";
 
 const initState = {
     name: "",
@@ -53,7 +53,7 @@ const ProductCards = ({ PRODUCT }) => {
           toast({
             title: "Please fill in all the inputs",
             status: "error",
-            duration: 1000,
+            duration: 1200,
             isClosable: true,
             position: "top",
           });
@@ -62,12 +62,13 @@ const ProductCards = ({ PRODUCT }) => {
           toast({
             title: "New Item added successfully",
             status: "success",
-            duration: 1200,
+            duration: 1500,
             isClosable: true,
             position: "top",
           });
           setAdd(initState);
           onClose();
+          dispatch(getSofas());
         }
       };
 

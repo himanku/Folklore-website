@@ -1,12 +1,11 @@
 import { Box, CloseButton, Flex, Image, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
-import { FiHome, FiPackage, FiUsers } from 'react-icons/fi';
+import { FiPackage, FiUsers } from 'react-icons/fi';
 import {IoShirtOutline} from "react-icons/io5"
 import { NavItem } from './NavItem';
 import { Link } from 'react-router-dom';
 
 const LinkItems = [
-    { name: 'Dashboard', icon: FiHome, route: 'admin/dashboard' },
     { name: 'All Products', icon: IoShirtOutline, route: 'admin/products/furniture' },
     { name: 'Users', icon: FiUsers, route: 'admin/users' },
     { name: 'Orders', icon: FiPackage, route: 'admin/orders' },
