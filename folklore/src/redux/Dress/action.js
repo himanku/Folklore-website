@@ -29,7 +29,7 @@ export const getDress = (params) => (dispatch) => {
 
     // axios.get(`${process.env.REACT_APP_API_URL}${brand}?sort=${sort || "rating"},${order || "asc"}`)
     // axios.get(`${process.env.REACT_APP_API_URL}${params.brand}`)
-    axios.get(`https://vast-puce-mussel-tie.cyclic.app/dress`)
+    axios.get(`https://vast-puce-mussel-tie.cyclic.app/dress?page=1&limit=30`)
         .then((res) => {
             // console.log(`${process.env.REACT_APP_API_URL}/dress`);
             dispatch(getDressSuccess(res.data))
