@@ -1,6 +1,8 @@
 import { Box, Button, FormControl, FormLabel, Grid, Heading, HStack, Image, Input, Select, Text, useToast, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../../component/Footer'
+import Navbar from '../../component/Navbar'
 const CheckoutPage = () => {
     let TotalPrice=JSON.parse(localStorage.getItem("totalPrice"))||[]
     const toast = useToast()
@@ -71,6 +73,7 @@ const CheckoutPage = () => {
 
   return (
     <div>
+      <Navbar/>
         <Heading mt="20px" mb="20px" ml="100px">Shiping Details</Heading>
         <Grid templateColumns='repeat(2, 1fr)' gap={6}>
         <FormControl mb="30px" width="650px" border='1px'  isRequired ml="100px">
@@ -213,6 +216,7 @@ const CheckoutPage = () => {
             </Box>
             </VStack>
             </Grid>
+            <Footer/>
     </div>
   )
 }
