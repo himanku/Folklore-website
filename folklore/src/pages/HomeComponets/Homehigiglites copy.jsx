@@ -79,7 +79,7 @@ import { Badge, Box, Button, Flex, Icon, Image, Tooltip } from '@chakra-ui/react
                             alt={`Picture of ${item.minRentAmount}`}
                             
                             />
-                            <Button position={"absolute"} bottom={2}  left="42%">Shop now</Button>
+                            <Button position={"absolute"} bottom={2} onClick={()=>navigate("/dress")} left="42%">Shop now</Button>
                     </SwiperSlide>
                    
                     )

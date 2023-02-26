@@ -11,12 +11,7 @@ function App() {
   return (
   
       <div >
-        {/* <Navbar/> */}
-       <Allroutes/>
-        {/* <Footer/>  */}
-        {/* <CartData/> */}
-        {/* <CheckoutPage/> */}
-       
+         <Allroutes/>
       </div>
   
   );
