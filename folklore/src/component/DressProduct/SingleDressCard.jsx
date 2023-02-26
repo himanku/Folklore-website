@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { addTocart } from "../../Redux/Dress/action";
+import { addTocart } from "../../redux/Dress/action";
 
 const SingleDressCard = ({ dress }) => {
 
@@ -96,6 +96,7 @@ const ImageWrapper = styled.img`
 const DetailContainer = styled.div`
   border-left: 1px solid grey;
   padding: 20px;
+  text-align: center;
 `
 
 const DressName = styled.div`
@@ -177,7 +178,7 @@ const Cross = styled.p`
   border: 1px solid grey;
   width: 4%;
   position: absolute;
-  top: -4%;
+  top: 0%;
   left: 96%;
 
   @media (max-width: 600px) {

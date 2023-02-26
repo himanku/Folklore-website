@@ -1,20 +1,24 @@
 import styled from "styled-components";
 import DressSidebar from "../component/DressProduct/DressSidebar";
 import DressList from "../component/DressProduct/DressList";
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
 
 const Dress = () => {
-    return (
-        <div>
-            <ProductWrapper>
-                <SideBarWrapper>
-                    <DressSidebar />
-                </SideBarWrapper>
-                <DressWrapper>
-                    <DressList />
-                </DressWrapper>
-            </ProductWrapper>
-        </div>
-    )
+  return (
+    <div>
+      <Navbar />
+      <ProductWrapper>
+        <SideBarWrapper>
+          <DressSidebar />
+        </SideBarWrapper>
+        <DressWrapper>
+          <DressList />
+        </DressWrapper>
+      </ProductWrapper>
+      <Footer />
+    </div>
+  )
 }
 
 export default Dress;

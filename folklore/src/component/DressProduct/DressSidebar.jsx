@@ -34,7 +34,7 @@ const DressSidebar = () => {
     }, [brand, order]);
 
     return (
-        <div>
+        <SidebarWrapper>
             <p>Browse By:</p>
             <div>
                 <FilterSort>Filter By Brands:</FilterSort>
@@ -95,12 +95,17 @@ const DressSidebar = () => {
                     <label>high</label>
                 </div>
             </div>
-        </div>
+        </SidebarWrapper>
     )
 }
 
 export default DressSidebar;
 
+
+const SidebarWrapper = styled.div`
+  padding: 20px 0px 0px 20px;
+  line-height: 30px;
+`
 
 const FilterSort = styled.p`
   width: 90%;
@@ -108,3 +113,4 @@ const FilterSort = styled.p`
   font-weight: 600;
   margin: 10px;
 `
+

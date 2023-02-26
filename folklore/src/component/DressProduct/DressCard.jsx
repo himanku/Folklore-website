@@ -35,6 +35,7 @@ const DressCardContainer = styled.div`
 
 const Image = styled.img`
   width: 90%;
+  margin: auto;
 
   @media (max-width: 670px) {
     width: 80%;
