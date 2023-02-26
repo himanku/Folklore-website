@@ -2,7 +2,7 @@ import { Box, Button, Checkbox, Menu, MenuButton, MenuList } from '@chakra-ui/re
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import React from 'react'
 
-const Filter = ({filterbrand, setFilterbrand}) => {
+const FilterDress = ({filterbrand, setFilterbrand}) => {
     const onChange = ({ currentTarget: input }) => {
 		if (input.checked) {
 			const state = [...filterbrand, input.value];
@@ -22,36 +22,36 @@ const Filter = ({filterbrand, setFilterbrand}) => {
             <MenuList p="4">
                 <Box  p="1">
                     <Checkbox
-                        name="CasaCraft"
+                        name="Maxi_Dress"
                         // checked={equipment.includes("Barbell")}
-                        //checked={"CasaCraft"}
-                        value="CasaCraft"
+                        //checked={"Maxi_Dress"}
+                        value="Maxi_Dress"
                         onChange={onChange}
-                    >CasaCraft</Checkbox>
+                    >Maxi Dress</Checkbox>
                 </Box>
                 <Box p="1">
                     <Checkbox
-                    name="Woodsworth"
+                    name="Sleeve_Dress"
                     // checked={equipment.includes("Barbell")}
-                    value="Woodsworth"
+                    value="Sleeve_Dress"
                     onChange={onChange}
-                    >Woodsworth</Checkbox>
+                    >Sleeve Dress</Checkbox>
                 </Box>
                 <Box p="1">
                     <Checkbox
-                    name="Febonic"
+                    name="Mini_Dress"
                     // checked={equipment.includes("Barbell")}
-                    value="Febonic"
+                    value="Mini_Dress"
                     onChange={onChange}
-                    >Febonic</Checkbox>
+                    >Mini Dress</Checkbox>
                 </Box>
                 <Box p="1">
                     <Checkbox
-                    name="Durian"
+                    name="Tunic Dress"
                     // checked={equipment.includes("Barbell")}
-                    value="Durian"
+                    value="Tunic Dress"
                     onChange={onChange}
-                    >Durian</Checkbox>
+                    >Tunic Dress</Checkbox>
                 </Box>
             </MenuList>
         </Menu>
@@ -59,4 +59,4 @@ const Filter = ({filterbrand, setFilterbrand}) => {
   )
 }
 
-export default Filter
+export default FilterDress

@@ -25,6 +25,7 @@ import {
     }
     return (
       <Flex
+        zIndex={2}
         ml={{ base: 0, md: 60 }}
         px={{ base: 4, md: 4 }}
         height="20"
@@ -80,6 +81,7 @@ import {
                 </HStack>
               </MenuButton>
               <MenuList
+                zIndex="5"
                 bg={useColorModeValue("white", "gray.900")}
                 borderColor={useColorModeValue("gray.200", "gray.700")}
               >
