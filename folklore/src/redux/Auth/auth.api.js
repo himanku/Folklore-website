@@ -11,6 +11,7 @@ export const AddUserApi=async(cread)=>{
 
 export const LoginApi=async(cread)=>{
   let res= await axios.post(`https://vast-puce-mussel-tie.cyclic.app/users/login`,cread)
-  return res.data
+  console.log(res)
+  return res
 }
 
