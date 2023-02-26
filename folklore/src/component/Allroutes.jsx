@@ -7,9 +7,15 @@ import Users from "../pages/Admin/Users";
 import Orders from "../pages/Admin/Orders";
 import Dresses from "../pages/Admin/Dresses";
 import Furniture from "../pages/Admin/Furniture";
-import CartPage from '../pages/CartPage/CartPage'
+
+import CheckoutPage from "../pages/CartPage/CheckoutPage";
+import Payment from "../pages/CartPage/Payment";
+import CartData from "../pages/CartPage/CartPage";
+
+
 import PrivateRoute from "../HOC/PrivateRoute";
 import PrivateRouteAdmin from "../HOC/PrivateRouteAdmin";
+
 
 const Allroutes = () => {
   return (
@@ -21,7 +27,11 @@ const Allroutes = () => {
       <Route path="/admin/orders" element={<Orders />} />
       <Route path="/admin/products/dresses" element={<Dresses />} />
       <Route path="/admin/products/furniture" element={<Furniture />} />
-      <Route path="/cartpage" element={<PrivateRoute><CartPage /></PrivateRoute> } />
+
+      <Route path="/checkoutpage" element={<CheckoutPage />} />
+      <Route path="/paymentpage" element={<Payment />} />
+     <Route path="/cartpage" element={<PrivateRoute><CartPage /></PrivateRoute> } />
+
     </Routes>
   );
 };
