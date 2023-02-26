@@ -257,10 +257,10 @@ setSigninpassword("")
          <Box bg={useColorModeValue('#fdfdf9', '#fdfdf9')} px={2}  position="sticky" top={0} zIndex={4}>
 
                                 <Flex h={8} alignItems={'end'}  justifyContent={{base: 'center', sm: 'center', md: 'center',lg:'end'}} pr={12} > {/*------------------------------------- top part */}
-                                <Flex justifyContent={'space-around'} gap={6} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}>
+                                <Flex justifyContent={'space-around'} gap={6} mt={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}>
                                 <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                 <HiLanguage/> English</Flex>
-                                <Flex gap={2} alignItems={'center'}  display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
+                                <Flex gap={2} alignItems={'center'}   display={{base: 'none', sm: 'none', md: 'none',lg:'flex'}}> 
                                                             
    {/* ------------------------------------------------------------Logined user Dropdown */}
                                                     { user &&(user.role=="admin"||user.role=="user" ) &&<Menu>
