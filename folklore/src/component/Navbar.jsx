@@ -273,7 +273,7 @@ setSigninpassword("")
                                                           <MenuItem>Addresses & Payments</MenuItem>
                                                           <MenuItem>Order History</MenuItem>
                                                           <MenuItem>Wish List</MenuItem>
-                                                         { user&&user.role=="admin" && <MenuItem onClick={()=>navigate("/admin/dashboard")}>Admin Page</MenuItem>}
+                                                         { user&&user.role=="admin" && <MenuItem onClick={()=>navigate("/admin/products/furniture")}>Admin Page</MenuItem>}
                                                           <MenuItem onClick={Logout}>Sign Out</MenuItem>
                                                             
                                                           </MenuList>
@@ -555,7 +555,7 @@ setSigninpassword("")
                                                     <DrawerBody>
                                                         <VStack>
                           {/* ---------------------------------------------------------------------------------- small screnn menu itemes----------------------------------------------- */}
-                                                    { user&&user.role=="admin" && <Box onClick={()=>navigate("/admin/dashboard")} 
+                                                    { user&&user.role=="admin" && <Box onClick={()=>navigate("/admin/products/furniture")} 
                                                     borderBottom={"1px solid black"} w={"100%"} h={16} >
                                                                           
                                                                           <Text fontSize={"2xl"} >Admin Page</Text>
