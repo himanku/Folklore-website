@@ -137,6 +137,8 @@ import axios from "axios";
 // }
 // ]
 import {getItem} from "../../utility/localStorage"
+import Navbar from "../../component/Navbar";
+import Footer from "../../component/Footer";
 
 const CartData = () => {
   
@@ -344,7 +346,7 @@ const CartData = () => {
   return (
     <>
 
-    {/* <Navbar/> */}
+    <Navbar/>
 
       <Box mt="20px">
         <Box
@@ -1011,7 +1013,7 @@ export const SingleItem = ({
         </Modal>
   
   
-      
+      <Footer/>
       </>
     );
   }

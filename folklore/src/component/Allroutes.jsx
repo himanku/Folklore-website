@@ -30,7 +30,7 @@ const Allroutes = () => {
 
       <Route path="/checkoutpage" element={<CheckoutPage />} />
       <Route path="/paymentpage" element={<Payment />} />
-     <Route path="/cartpage" element={<PrivateRoute><CartPage /></PrivateRoute> } />
+     <Route path="/cartpage" element={<PrivateRoute><CartData /></PrivateRoute> } />
 
     </Routes>
   );
