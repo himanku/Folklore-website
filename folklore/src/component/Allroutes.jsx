@@ -8,7 +8,9 @@ import Orders from "../pages/Admin/Orders";
 import Dresses from "../pages/Admin/Dresses";
 import Furniture from "../pages/Admin/Furniture";
 import Dress from "../pages/Dress";
-import SingleDress from "../pages/SingleDress"; 
+import SingleDress from "../pages/SingleDress";
+import EditPage from "../pages/Admin/EditPage";
+import SingleUser from "../pages/Admin/SingleUser";
 
 import CheckoutPage from "../pages/CartPage/CheckoutPage";
 import Payment from "../pages/CartPage/Payment";
@@ -31,10 +33,11 @@ const Allroutes = () => {
       <Route path="/admin/products/furniture" element={<Furniture />} />
       <Route path="/dress" element={<Dress />} />
       <Route path="/singledress/:id" element={<SingleDress />} />
+      <Route path="/admin/products/edit/:id" element={<EditPage />} />
+      <Route path="/admin/users/block/:id" element={<SingleUser />} />
       <Route path="/checkoutpage" element={<CheckoutPage />} />
       <Route path="/paymentpage" element={<Payment />} />
      <Route path="/cartpage" element={<PrivateRoute><CartData /></PrivateRoute> } />
-
     </Routes>
   );
 };

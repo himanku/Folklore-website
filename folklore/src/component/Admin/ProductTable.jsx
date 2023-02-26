@@ -10,7 +10,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getFurniture(page, search,sort, filterbrand))       
-    },[ dispatch,page, search, sort, filterbrand])
+    },[ dispatch, page, search, sort, filterbrand])
     console.log(furnitures)
 
     if(loading) {
@@ -41,7 +41,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
             <Table variant='striped' colorScheme='purple'>
                 <Thead>
                 <Tr textAlign={"center"}>
-                    <Th w="50px" fontSize="16px">ID</Th>
+                    {/* <Th w="50px" fontSize="16px">ID</Th> */}
                     <Th fontSize="16px">IMAGE</Th>
                     <Th fontSize="16px">NAME</Th>
                     <Th fontSize="16px">BRAND</Th>
@@ -56,7 +56,7 @@ const ProductTable = ({page, search, sort, filterbrand}) => {
                         key={el._id}
                         src={el.img1}
                         name={el.name}
-                        id={el._id.slice(0,9)}
+                        id={el._id}
                         brand={el.brand}
                         price={el.highprice}
                         rating={el.rating? el.rating : "No reviews"}    
