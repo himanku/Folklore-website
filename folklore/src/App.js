@@ -1,8 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './component/Navbar';
 import Allroutes from './component/Allroutes';
-import Footer from './component/Footer';
 
 function App() {
   return (
@@ -10,7 +7,7 @@ function App() {
       <div >
         {/* <Navbar/> */}
         <Allroutes/>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
   
   );
