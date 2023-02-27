@@ -1,6 +1,8 @@
 # nem111-project-backend
 Creating a backend project for Anthropologie website, where the API is provided to get all the products data of website. By using that you can able to perform sorting, filtering functionality.
 
+## deployed url for backend api
+`https://vast-puce-mussel-tie.cyclic.app`
 
 # for sorting purpose
 1. sort by price (lowprice, highprice)
