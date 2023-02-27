@@ -2,7 +2,8 @@
 
 <h3>Folkore is built with the reference website "anthropologie.com". It is an e-commerce website that sells clothing, jewelry, home furniture, decorations, beauty products, and gifts.</h3>
 
-## [Deployed URL]( https://folkl0re.netlify.app )
+## [Deployed Netlify URL]( https://folkl0re.netlify.app )
+## [Deployed backend URL](https://vast-puce-mussel-tie.cyclic.app)
 
 ## Our Team Members
 - Himanku Gogoi 
